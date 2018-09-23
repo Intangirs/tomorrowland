@@ -3,18 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB292126BA8100137583 /* AppDelegate.swift */; };
-		58ABFB2C2126BA8100137583 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB2B2126BA8100137583 /* ViewController.swift */; };
-		58ABFB2F2126BA8100137583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB2D2126BA8100137583 /* Main.storyboard */; };
 		58ABFB312126BA8200137583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB302126BA8200137583 /* Assets.xcassets */; };
 		58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB322126BA8200137583 /* LaunchScreen.storyboard */; };
 		58ABFB3F2126BA8200137583 /* TomorrowLandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB3E2126BA8200137583 /* TomorrowLandTests.swift */; };
 		58ABFB4A2126BA8300137583 /* TomorrowLandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */; };
 		58ABFB592126C07800137583 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ABFB582126C07800137583 /* WebKit.framework */; };
+		700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700AB5E82157837E005C5150 /* Alamofire.framework */; };
+		700AB5EB21578918005C5150 /* String+TomorrowLand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+TomorrowLand.swift */; };
+		7037796A2157707700064392 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779682157707700064392 /* HomeViewController.swift */; };
+		7037796C215770FE00064392 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703779692157707700064392 /* HomeViewController.xib */; };
+		7037796F215771BE00064392 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037796D215771BE00064392 /* WebViewController.swift */; };
+		70377970215771BE00064392 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7037796E215771BE00064392 /* WebViewController.xib */; };
+		703779722157750D00064392 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779712157750D00064392 /* Keys.swift */; };
+		7037797621577F6A00064392 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +43,6 @@
 /* Begin PBXFileReference section */
 		58ABFB262126BA8100137583 /* TomorrowLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomorrowLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ABFB292126BA8100137583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		58ABFB2B2126BA8100137583 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		58ABFB2E2126BA8100137583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58ABFB302126BA8200137583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58ABFB332126BA8200137583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58ABFB352126BA8200137583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,15 @@
 		58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowLandUITests.swift; sourceTree = "<group>"; };
 		58ABFB4B2126BA8300137583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58ABFB582126C07800137583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		700AB5E82157837E005C5150 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		700AB5EA21578918005C5150 /* String+TomorrowLand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TomorrowLand.swift"; sourceTree = "<group>"; };
+		703779682157707700064392 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		703779692157707700064392 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		7037796D215771BE00064392 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		7037796E215771BE00064392 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		703779712157750D00064392 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		703779732157751D00064392 /* Keys.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.sample.swift; sourceTree = "<group>"; };
+		7037797521577F6A00064392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58ABFB592126C07800137583 /* WebKit.framework in Frameworks */,
+				700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +115,18 @@
 		58ABFB282126BA8100137583 /* TomorrowLand */ = {
 			isa = PBXGroup;
 			children = (
+				703779682157707700064392 /* HomeViewController.swift */,
+				703779692157707700064392 /* HomeViewController.xib */,
+				7037796D215771BE00064392 /* WebViewController.swift */,
+				7037796E215771BE00064392 /* WebViewController.xib */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
-				58ABFB2B2126BA8100137583 /* ViewController.swift */,
-				58ABFB2D2126BA8100137583 /* Main.storyboard */,
+				7037797521577F6A00064392 /* Constants.swift */,
 				58ABFB302126BA8200137583 /* Assets.xcassets */,
 				58ABFB322126BA8200137583 /* LaunchScreen.storyboard */,
 				58ABFB352126BA8200137583 /* Info.plist */,
+				703779712157750D00064392 /* Keys.swift */,
+				703779732157751D00064392 /* Keys.sample.swift */,
+				700AB5EA21578918005C5150 /* String+TomorrowLand.swift */,
 			);
 			path = TomorrowLand;
 			sourceTree = "<group>";
@@ -132,6 +152,7 @@
 		58ABFB572126C07800137583 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				700AB5E82157837E005C5150 /* Alamofire.framework */,
 				58ABFB582126C07800137583 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -147,6 +168,7 @@
 				58ABFB222126BA8100137583 /* Sources */,
 				58ABFB232126BA8100137583 /* Frameworks */,
 				58ABFB242126BA8100137583 /* Resources */,
+				703779772157828700064392 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -241,9 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7037796C215770FE00064392 /* HomeViewController.xib in Resources */,
 				58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */,
 				58ABFB312126BA8200137583 /* Assets.xcassets in Resources */,
-				58ABFB2F2126BA8100137583 /* Main.storyboard in Resources */,
+				70377970215771BE00064392 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,13 +286,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		703779772157828700064392 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"",
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58ABFB222126BA8100137583 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58ABFB2C2126BA8100137583 /* ViewController.swift in Sources */,
+				7037797621577F6A00064392 /* Constants.swift in Sources */,
 				58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */,
+				700AB5EB21578918005C5150 /* String+TomorrowLand.swift in Sources */,
+				703779722157750D00064392 /* Keys.swift in Sources */,
+				7037796F215771BE00064392 /* WebViewController.swift in Sources */,
+				7037796A2157707700064392 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +355,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		58ABFB2D2126BA8100137583 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58ABFB2E2126BA8100137583 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		58ABFB322126BA8200137583 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,6 +486,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHFXF6N2QE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TomorrowLand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,6 +508,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHFXF6N2QE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TomorrowLand/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

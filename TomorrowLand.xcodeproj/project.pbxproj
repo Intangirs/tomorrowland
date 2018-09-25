@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58187F86215A3B9300CA842A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F84215A3B9300CA842A /* HomeViewController.swift */; };
+		58187F87215A3B9300CA842A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58187F85215A3B9300CA842A /* HomeViewController.xib */; };
+		58187F89215A41D200CA842A /* Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F88215A41D200CA842A /* Mastodon.swift */; };
+		58187F8B215A42D900CA842A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8A215A42D900CA842A /* Token.swift */; };
+		58187F8F215A4A3D00CA842A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8E215A4A3D00CA842A /* Timeline.swift */; };
+		5880FD62215B886300DE273C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD64215B886300DE273C /* Localizable.strings */; };
+		5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD66215B8B3400DE273C /* MastodonLogin.swift */; };
+		5880FD6A215B8D5D00DE273C /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD68215B8D5D00DE273C /* PublicViewController.swift */; };
+		5880FD6B215B8D5D00DE273C /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD69215B8D5D00DE273C /* PublicViewController.xib */; };
 		58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB292126BA8100137583 /* AppDelegate.swift */; };
 		58ABFB312126BA8200137583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB302126BA8200137583 /* Assets.xcassets */; };
 		58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB322126BA8200137583 /* LaunchScreen.storyboard */; };
@@ -15,11 +24,11 @@
 		58ABFB592126C07800137583 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ABFB582126C07800137583 /* WebKit.framework */; };
 		7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7000403E2159434000FB782F /* KeychainSwift.framework */; };
 		700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700AB5E82157837E005C5150 /* Alamofire.framework */; };
-		700AB5EB21578918005C5150 /* String+TomorrowLand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+TomorrowLand.swift */; };
-		7037796A2157707700064392 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779682157707700064392 /* HomeViewController.swift */; };
-		7037796C215770FE00064392 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703779692157707700064392 /* HomeViewController.xib */; };
-		7037796F215771BE00064392 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037796D215771BE00064392 /* WebViewController.swift */; };
-		70377970215771BE00064392 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7037796E215771BE00064392 /* WebViewController.xib */; };
+		700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+Mastodon.swift */; };
+		7037796A2157707700064392 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779682157707700064392 /* AuthenticationViewController.swift */; };
+		7037796C215770FE00064392 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703779692157707700064392 /* AuthenticationViewController.xib */; };
+		7037796F215771BE00064392 /* OAuth2WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037796D215771BE00064392 /* OAuth2WebViewController.swift */; };
+		70377970215771BE00064392 /* OAuth2WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7037796E215771BE00064392 /* OAuth2WebViewController.xib */; };
 		703779722157750D00064392 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779712157750D00064392 /* Keys.swift */; };
 		7037797621577F6A00064392 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +51,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58187F84215A3B9300CA842A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		58187F85215A3B9300CA842A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		58187F88215A41D200CA842A /* Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastodon.swift; sourceTree = "<group>"; };
+		58187F8A215A42D900CA842A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		58187F8E215A4A3D00CA842A /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		5880FD63215B886300DE273C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5880FD65215B887600DE273C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5880FD66215B8B3400DE273C /* MastodonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonLogin.swift; sourceTree = "<group>"; };
+		5880FD68215B8D5D00DE273C /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
+		5880FD69215B8D5D00DE273C /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		58ABFB262126BA8100137583 /* TomorrowLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomorrowLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ABFB292126BA8100137583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58ABFB302126BA8200137583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,11 +75,11 @@
 		58ABFB582126C07800137583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7000403E2159434000FB782F /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
 		700AB5E82157837E005C5150 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		700AB5EA21578918005C5150 /* String+TomorrowLand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TomorrowLand.swift"; sourceTree = "<group>"; };
-		703779682157707700064392 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		703779692157707700064392 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		7037796D215771BE00064392 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		7037796E215771BE00064392 /* WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		700AB5EA21578918005C5150 /* String+Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Mastodon.swift"; sourceTree = "<group>"; };
+		703779682157707700064392 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		703779692157707700064392 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		7037796D215771BE00064392 /* OAuth2WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2WebViewController.swift; sourceTree = "<group>"; };
+		7037796E215771BE00064392 /* OAuth2WebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuth2WebViewController.xib; sourceTree = "<group>"; };
 		703779712157750D00064392 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		703779732157751D00064392 /* Keys.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.sample.swift; sourceTree = "<group>"; };
 		7037797521577F6A00064392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -94,6 +113,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58187F82215A396100CA842A /* Mastodon */ = {
+			isa = PBXGroup;
+			children = (
+				7037797521577F6A00064392 /* Constants.swift */,
+				703779712157750D00064392 /* Keys.swift */,
+				703779732157751D00064392 /* Keys.sample.swift */,
+				700AB5EA21578918005C5150 /* String+Mastodon.swift */,
+				7037796D215771BE00064392 /* OAuth2WebViewController.swift */,
+				7037796E215771BE00064392 /* OAuth2WebViewController.xib */,
+				703779682157707700064392 /* AuthenticationViewController.swift */,
+				703779692157707700064392 /* AuthenticationViewController.xib */,
+				58187F88215A41D200CA842A /* Mastodon.swift */,
+				58187F8D215A4A2F00CA842A /* APIs */,
+				58187F8C215A472500CA842A /* Models */,
+				5880FD66215B8B3400DE273C /* MastodonLogin.swift */,
+			);
+			path = Mastodon;
+			sourceTree = "<group>";
+		};
+		58187F8C215A472500CA842A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				58187F8A215A42D900CA842A /* Token.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		58187F8D215A4A2F00CA842A /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				58187F8E215A4A3D00CA842A /* Timeline.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
 		58ABFB1D2126BA8100137583 = {
 			isa = PBXGroup;
 			children = (
@@ -118,18 +172,16 @@
 		58ABFB282126BA8100137583 /* TomorrowLand */ = {
 			isa = PBXGroup;
 			children = (
-				703779682157707700064392 /* HomeViewController.swift */,
-				703779692157707700064392 /* HomeViewController.xib */,
-				7037796D215771BE00064392 /* WebViewController.swift */,
-				7037796E215771BE00064392 /* WebViewController.xib */,
+				58187F82215A396100CA842A /* Mastodon */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
-				7037797521577F6A00064392 /* Constants.swift */,
+				5880FD68215B8D5D00DE273C /* PublicViewController.swift */,
+				5880FD69215B8D5D00DE273C /* PublicViewController.xib */,
+				58187F84215A3B9300CA842A /* HomeViewController.swift */,
+				58187F85215A3B9300CA842A /* HomeViewController.xib */,
 				58ABFB302126BA8200137583 /* Assets.xcassets */,
 				58ABFB322126BA8200137583 /* LaunchScreen.storyboard */,
 				58ABFB352126BA8200137583 /* Info.plist */,
-				703779712157750D00064392 /* Keys.swift */,
-				703779732157751D00064392 /* Keys.sample.swift */,
-				700AB5EA21578918005C5150 /* String+TomorrowLand.swift */,
+				5880FD64215B886300DE273C /* Localizable.strings */,
 			);
 			path = TomorrowLand;
 			sourceTree = "<group>";
@@ -249,6 +301,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 58ABFB1D2126BA8100137583;
 			productRefGroup = 58ABFB272126BA8100137583 /* Products */;
@@ -267,10 +320,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7037796C215770FE00064392 /* HomeViewController.xib in Resources */,
+				7037796C215770FE00064392 /* AuthenticationViewController.xib in Resources */,
+				5880FD62215B886300DE273C /* Localizable.strings in Resources */,
 				58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */,
+				58187F87215A3B9300CA842A /* HomeViewController.xib in Resources */,
 				58ABFB312126BA8200137583 /* Assets.xcassets in Resources */,
-				70377970215771BE00064392 /* WebViewController.xib in Resources */,
+				5880FD6B215B8D5D00DE273C /* PublicViewController.xib in Resources */,
+				70377970215771BE00064392 /* OAuth2WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,12 +376,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58187F8B215A42D900CA842A /* Token.swift in Sources */,
 				7037797621577F6A00064392 /* Constants.swift in Sources */,
 				58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */,
-				700AB5EB21578918005C5150 /* String+TomorrowLand.swift in Sources */,
+				5880FD6A215B8D5D00DE273C /* PublicViewController.swift in Sources */,
+				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
 				703779722157750D00064392 /* Keys.swift in Sources */,
-				7037796F215771BE00064392 /* WebViewController.swift in Sources */,
-				7037796A2157707700064392 /* HomeViewController.swift in Sources */,
+				58187F8F215A4A3D00CA842A /* Timeline.swift in Sources */,
+				58187F86215A3B9300CA842A /* HomeViewController.swift in Sources */,
+				7037796F215771BE00064392 /* OAuth2WebViewController.swift in Sources */,
+				58187F89215A41D200CA842A /* Mastodon.swift in Sources */,
+				7037796A2157707700064392 /* AuthenticationViewController.swift in Sources */,
+				5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +423,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5880FD64215B886300DE273C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5880FD63215B886300DE273C /* en */,
+				5880FD65215B887600DE273C /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		58ABFB322126BA8200137583 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -376,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -436,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -490,7 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KHFXF6N2QE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,6 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development me.junkpiano.ios.TomorrowLand";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -512,7 +586,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KHFXF6N2QE;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,6 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.junkpiano.ios.TomorrowLand";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -14,4 +14,6 @@ import Foundation
 struct Keys {
     static let MASTODON_CLIENT_ID = ""
     static let MASTODON_CLIENT_SECRET = ""
+    static let MASTODON_REDIRECT_URI = ""
+    static let MASTODON_SCOPE = ""
 }

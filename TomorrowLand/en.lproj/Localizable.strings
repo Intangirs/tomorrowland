@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  TomorrowLand
+
+  Created by Yusuke Ohashi on 2018/09/26.
+  Copyright © 2018 Yusuke Ohashi. All rights reserved.
+*/
+
+"Home" = "Home";
+"Authorize" = "Authorize";

@@ -1,5 +1,5 @@
 //
-//  String+TomorrowLand.swift
+//  String+Mastodon.swift
 //  TomorrowLand
 //
 //  Created by Yusuke Ohashi on 2018/09/23.

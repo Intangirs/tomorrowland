@@ -2,20 +2,32 @@
 //  HomeViewController.swift
 //  TomorrowLand
 //
-//  Created by Yusuke Ohashi on 2018/09/23.
+//  Created by Yusuke Ohashi on 2018/09/25.
 //  Copyright © 2018 Yusuke Ohashi. All rights reserved.
 //
 
 import UIKit
+import Alamofire
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, MastodonLoginRequired {
+    func signIntoFederation() -> Bool {
+        return true
+    }
+    
 
-    @IBOutlet weak var instanceHostLabel: UITextField!
-    @IBOutlet weak var authorizeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Home".localized()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !signIntoFederation() {
+            Mastodon.Timeline.home()
+        }
     }
 
 
@@ -28,11 +40,5 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func startAuthorization(_ sender: Any) {
-        let web = WebViewController()
-        web.hostName = instanceHostLabel.text ?? ""
-        present(web, animated: false, completion: nil)
-    }
-    
+
 }

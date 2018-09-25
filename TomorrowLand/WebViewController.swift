@@ -70,7 +70,9 @@ extension WebViewController: WKNavigationDelegate {
                                       encoding: URLEncoding.httpBody,
                                       headers: nil)
                         .responseJSON { (response) in
-                            debugPrint(response)
+                            DispatchQueue.main.async {
+                                self.dismiss(animated: false, completion: nil)
+                            }
                     }
                     decisionHandler(.cancel)
                     return

@@ -13,6 +13,7 @@
 		58ABFB3F2126BA8200137583 /* TomorrowLandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB3E2126BA8200137583 /* TomorrowLandTests.swift */; };
 		58ABFB4A2126BA8300137583 /* TomorrowLandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */; };
 		58ABFB592126C07800137583 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ABFB582126C07800137583 /* WebKit.framework */; };
+		7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7000403E2159434000FB782F /* KeychainSwift.framework */; };
 		700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700AB5E82157837E005C5150 /* Alamofire.framework */; };
 		700AB5EB21578918005C5150 /* String+TomorrowLand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+TomorrowLand.swift */; };
 		7037796A2157707700064392 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779682157707700064392 /* HomeViewController.swift */; };
@@ -53,6 +54,7 @@
 		58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowLandUITests.swift; sourceTree = "<group>"; };
 		58ABFB4B2126BA8300137583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58ABFB582126C07800137583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7000403E2159434000FB782F /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
 		700AB5E82157837E005C5150 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		700AB5EA21578918005C5150 /* String+TomorrowLand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TomorrowLand.swift"; sourceTree = "<group>"; };
 		703779682157707700064392 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */,
 				58ABFB592126C07800137583 /* WebKit.framework in Frameworks */,
 				700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */,
 			);
@@ -152,6 +155,7 @@
 		58ABFB572126C07800137583 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7000403E2159434000FB782F /* KeychainSwift.framework */,
 				700AB5E82157837E005C5150 /* Alamofire.framework */,
 				58ABFB582126C07800137583 /* WebKit.framework */,
 			);
@@ -297,11 +301,13 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainSwift.framework",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -9,11 +9,7 @@
 import UIKit
 import Alamofire
 
-class HomeViewController: UIViewController, MastodonLoginRequired {
-    func signIntoFederation() -> Bool {
-        return true
-    }
-    
+class HomeViewController: UIViewController, MastodonLoginRequired {    
 
     override func viewDidLoad() {
         super.viewDidLoad()

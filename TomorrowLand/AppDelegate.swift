@@ -17,17 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let tabBarViewController = UITabBarController()
-        let homeViewController = HomeViewController()
-        let publicViewController = PublicViewController()
-        
-        tabBarViewController.viewControllers = [homeViewController, publicViewController]
-        
-        window?.rootViewController = tabBarViewController
+        window?.rootViewController = configureTabBarController()
         window?.makeKeyAndVisible()        
 
         return true
+    }
+    
+    func configureTabBarController() -> UITabBarController {
+        let tabBarViewController = UITabBarController()
+        let homeViewController = HomeViewController()
+        homeViewController.tabBarItem = UITabBarItem(title: "Home".localized(), image: nil, tag: 0)
+        
+        let publicViewController = PublicViewController()
+        publicViewController.tabBarItem = UITabBarItem(title: "Public".localized(), image: nil, tag: 1)
+        
+        tabBarViewController.viewControllers = [homeViewController, publicViewController]
+
+        return tabBarViewController
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

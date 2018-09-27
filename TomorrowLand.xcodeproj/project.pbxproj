@@ -16,6 +16,8 @@
 		5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD66215B8B3400DE273C /* MastodonLogin.swift */; };
 		5880FD6A215B8D5D00DE273C /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD68215B8D5D00DE273C /* PublicViewController.swift */; };
 		5880FD6B215B8D5D00DE273C /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD69215B8D5D00DE273C /* PublicViewController.xib */; };
+		5880FD6D215B96A000DE273C /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD6C215B96A000DE273C /* OAuth.swift */; };
+		5880FD6F215C548900DE273C /* MastodonLogin+TomorrowLand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD6E215C548900DE273C /* MastodonLogin+TomorrowLand.swift */; };
 		58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB292126BA8100137583 /* AppDelegate.swift */; };
 		58ABFB312126BA8200137583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB302126BA8200137583 /* Assets.xcassets */; };
 		58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB322126BA8200137583 /* LaunchScreen.storyboard */; };
@@ -61,6 +63,8 @@
 		5880FD66215B8B3400DE273C /* MastodonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonLogin.swift; sourceTree = "<group>"; };
 		5880FD68215B8D5D00DE273C /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
 		5880FD69215B8D5D00DE273C /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
+		5880FD6C215B96A000DE273C /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
+		5880FD6E215C548900DE273C /* MastodonLogin+TomorrowLand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonLogin+TomorrowLand.swift"; sourceTree = "<group>"; };
 		58ABFB262126BA8100137583 /* TomorrowLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomorrowLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ABFB292126BA8100137583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58ABFB302126BA8200137583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,7 +131,6 @@
 				58187F88215A41D200CA842A /* Mastodon.swift */,
 				58187F8D215A4A2F00CA842A /* APIs */,
 				58187F8C215A472500CA842A /* Models */,
-				5880FD66215B8B3400DE273C /* MastodonLogin.swift */,
 			);
 			path = Mastodon;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				58187F8E215A4A3D00CA842A /* Timeline.swift */,
+				5880FD6C215B96A000DE273C /* OAuth.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -174,6 +178,8 @@
 			children = (
 				58187F82215A396100CA842A /* Mastodon */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
+				5880FD66215B8B3400DE273C /* MastodonLogin.swift */,
+				5880FD6E215C548900DE273C /* MastodonLogin+TomorrowLand.swift */,
 				5880FD68215B8D5D00DE273C /* PublicViewController.swift */,
 				5880FD69215B8D5D00DE273C /* PublicViewController.xib */,
 				58187F84215A3B9300CA842A /* HomeViewController.swift */,
@@ -378,6 +384,7 @@
 			files = (
 				58187F8B215A42D900CA842A /* Token.swift in Sources */,
 				7037797621577F6A00064392 /* Constants.swift in Sources */,
+				5880FD6F215C548900DE273C /* MastodonLogin+TomorrowLand.swift in Sources */,
 				58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */,
 				5880FD6A215B8D5D00DE273C /* PublicViewController.swift in Sources */,
 				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
@@ -388,6 +395,7 @@
 				58187F89215A41D200CA842A /* Mastodon.swift in Sources */,
 				7037796A2157707700064392 /* AuthenticationViewController.swift in Sources */,
 				5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */,
+				5880FD6D215B96A000DE273C /* OAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

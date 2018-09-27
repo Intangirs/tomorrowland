@@ -13,6 +13,7 @@ extension Mastodon {
         static let oauthAuthorizePath = "/oauth/authorize"
         static let oauthTokenPath = "/oauth/token"
         static let oauthRedirectPath = "/oauth/authorize/native"
-        static let homePath = "/api/v1/timelines/home"
+        static let timelinesHomePath = "/api/v1/timelines/home"
+        static let timelinesPublicPath = "/api/v1/timelines/public"
     }
 }

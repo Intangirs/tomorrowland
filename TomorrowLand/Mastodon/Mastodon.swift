@@ -12,20 +12,22 @@ class Mastodon {
     static let shared = Mastodon()
     
     var hostname: String = ""
-    var selectedToken: String = ""
-    var tokens: [String] = []
+    var token: String = ""
     
-    static func load(hostname: String, tokens: [String]) {
+    static func load(hostname: String, token: String = "") {
         self.shared.hostname = hostname
-        self.shared.tokens = tokens
-        if tokens.count > 0 {
-            self.shared.selectedToken = tokens[0]
+        if token.count > 0 {
+            self.shared.token = token
         }
     }
     
+    /**
+     * Authentication through WebView
+     */
     static func addAccount(on viewController: UIViewController, completion: @escaping (Bool, String?, String?) -> Void) {
         let auth = AuthenticationViewController()
         auth.completeBlock = completion
         viewController.present(auth, animated: true, completion: nil)
     }
+    
 }

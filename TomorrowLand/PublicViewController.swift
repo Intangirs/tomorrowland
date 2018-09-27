@@ -15,6 +15,7 @@ class PublicViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.title = "Public".localized()
+        Mastodon.Timeline(type: .public).fetch()
     }
 
 }

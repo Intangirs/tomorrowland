@@ -81,9 +81,8 @@ extension OAuth2WebViewController: WKNavigationDelegate {
                                     let decoder = JSONDecoder()
                                     //using the array to put values
                                     let token = try decoder.decode(Token.self, from: response.data ?? Data())
-                                    if token.access_token.count > 0 && !Mastodon.shared.tokens.contains(token.access_token) {
-                                        Mastodon.shared.tokens.append(token.access_token)
-                                        Mastodon.shared.selectedToken = token.access_token
+                                    if token.access_token.count > 0 {
+                                        Mastodon.shared.token = token.access_token
                                         success = true
                                         self.authCallBack?(success, token.access_token)
                                     }

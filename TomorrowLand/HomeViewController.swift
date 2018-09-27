@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class HomeViewController: UIViewController, MastodonLoginRequired {    
+class HomeViewController: UIViewController, MastodonLoginRequired {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +21,11 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if !signIntoFederation() {
-            Mastodon.Timeline.home()
+        signIntoFederation { result in
+            guard result else {
+                return
+            }
+            Mastodon.Timeline(type: .home).fetch()
         }
     }
 

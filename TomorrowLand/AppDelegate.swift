@@ -13,24 +13,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = configureTabBarController()
-        window?.makeKeyAndVisible()        
+        window?.makeKeyAndVisible()
 
         return true
     }
-    
+
     func configureTabBarController() -> UITabBarController {
         let tabBarViewController = UITabBarController()
         let homeViewController = HomeViewController()
         homeViewController.tabBarItem = UITabBarItem(title: "Home".localized(), image: nil, tag: 0)
-        
+
         let publicViewController = PublicViewController()
         publicViewController.tabBarItem = UITabBarItem(title: "Public".localized(), image: nil, tag: 1)
-        
+
         tabBarViewController.viewControllers = [homeViewController, publicViewController]
 
         return tabBarViewController
@@ -58,6 +57,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

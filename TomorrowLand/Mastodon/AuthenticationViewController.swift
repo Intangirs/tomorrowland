@@ -12,27 +12,27 @@ class AuthenticationViewController: UIViewController {
 
     @IBOutlet weak var instanceHostLabel: UITextField!
     @IBOutlet weak var authorizeButton: UIButton!
-    
+
     var completeBlock: ((Bool, String?, String?) -> Void)?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         authorizeButton.setTitle("Authorize".localized(), for: .normal)
     }
-    
+
     @IBAction func startAuthorization(_ sender: Any) {
         let web = OAuth2WebViewController()
         web.hostName = instanceHostLabel.text ?? ""
         web.authCallBack = { result, token in
             self.completeBlock?(result, result ? web.hostName: nil, token)
-            
+
             DispatchQueue.main.async {
                 if result {
                     self.dismiss(animated: true, completion: nil)
                 }
             }
         }
-        
+
         if web.hostName.count > 0 {
             present(web, animated: false, completion: nil)
         }

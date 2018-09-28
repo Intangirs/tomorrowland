@@ -10,17 +10,17 @@ import UIKit
 
 class Mastodon {
     static let shared = Mastodon()
-    
+
     var hostname: String = ""
     var token: String = ""
-    
+
     static func load(hostname: String, token: String = "") {
         self.shared.hostname = hostname
         if token.count > 0 {
             self.shared.token = token
         }
     }
-    
+
     /**
      * Authentication through WebView
      */
@@ -29,5 +29,5 @@ class Mastodon {
         auth.completeBlock = completion
         viewController.present(auth, animated: true, completion: nil)
     }
-    
+
 }

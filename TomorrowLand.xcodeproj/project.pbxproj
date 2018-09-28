@@ -14,10 +14,15 @@
 		58187F8F215A4A3D00CA842A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8E215A4A3D00CA842A /* Timeline.swift */; };
 		5880FD62215B886300DE273C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD64215B886300DE273C /* Localizable.strings */; };
 		5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD66215B8B3400DE273C /* MastodonLogin.swift */; };
-		5880FD6A215B8D5D00DE273C /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD68215B8D5D00DE273C /* PublicViewController.swift */; };
-		5880FD6B215B8D5D00DE273C /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD69215B8D5D00DE273C /* PublicViewController.xib */; };
 		5880FD6D215B96A000DE273C /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD6C215B96A000DE273C /* OAuth.swift */; };
-		5880FD6F215C548900DE273C /* MastodonLogin+TomorrowLand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD6E215C548900DE273C /* MastodonLogin+TomorrowLand.swift */; };
+		5880FD71215C733D00DE273C /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD70215C733D00DE273C /* Status.swift */; };
+		5880FD73215C74DF00DE273C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD72215C74DF00DE273C /* Account.swift */; };
+		5880FD76215C99C100DE273C /* PublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD74215C99C100DE273C /* PublicViewController.swift */; };
+		5880FD77215C99C100DE273C /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD75215C99C100DE273C /* PublicViewController.xib */; };
+		5880FD7B215C9AE500DE273C /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD79215C9AE500DE273C /* StatusTableViewCell.swift */; };
+		5880FD7C215C9AE500DE273C /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD7A215C9AE500DE273C /* StatusTableViewCell.xib */; };
+		5880FD7E215CF4F300DE273C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD7D215CF4F300DE273C /* Document.swift */; };
+		5880FD80215CFF8500DE273C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD7F215CFF8500DE273C /* Entity.swift */; };
 		58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB292126BA8100137583 /* AppDelegate.swift */; };
 		58ABFB312126BA8200137583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB302126BA8200137583 /* Assets.xcassets */; };
 		58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB322126BA8200137583 /* LaunchScreen.storyboard */; };
@@ -33,6 +38,10 @@
 		70377970215771BE00064392 /* OAuth2WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7037796E215771BE00064392 /* OAuth2WebViewController.xib */; };
 		703779722157750D00064392 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779712157750D00064392 /* Keys.swift */; };
 		7037797621577F6A00064392 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* Constants.swift */; };
+		704F54252160E8D10068BA88 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704F54242160E8D10068BA88 /* ActiveLabel.framework */; };
+		709228C5216101CA004912CB /* MastodonTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709228C4216101CA004912CB /* MastodonTimeline.swift */; };
+		70A2FCB2216119E3004BF824 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A2FCB1216119E3004BF824 /* Media.swift */; };
+		70A2FCB421614174004BF824 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A2FCB321614174004BF824 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +70,15 @@
 		5880FD63215B886300DE273C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5880FD65215B887600DE273C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5880FD66215B8B3400DE273C /* MastodonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonLogin.swift; sourceTree = "<group>"; };
-		5880FD68215B8D5D00DE273C /* PublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
-		5880FD69215B8D5D00DE273C /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		5880FD6C215B96A000DE273C /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
-		5880FD6E215C548900DE273C /* MastodonLogin+TomorrowLand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonLogin+TomorrowLand.swift"; sourceTree = "<group>"; };
+		5880FD70215C733D00DE273C /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		5880FD72215C74DF00DE273C /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		5880FD74215C99C100DE273C /* PublicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicViewController.swift; sourceTree = "<group>"; };
+		5880FD75215C99C100DE273C /* PublicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
+		5880FD79215C9AE500DE273C /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		5880FD7A215C9AE500DE273C /* StatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
+		5880FD7D215CF4F300DE273C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		5880FD7F215CFF8500DE273C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		58ABFB262126BA8100137583 /* TomorrowLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomorrowLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ABFB292126BA8100137583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58ABFB302126BA8200137583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +101,11 @@
 		703779712157750D00064392 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		703779732157751D00064392 /* Keys.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.sample.swift; sourceTree = "<group>"; };
 		7037797521577F6A00064392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		704F54242160E8D10068BA88 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
+		704F54262160E8DF0068BA88 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		709228C4216101CA004912CB /* MastodonTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonTimeline.swift; sourceTree = "<group>"; };
+		70A2FCB1216119E3004BF824 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		70A2FCB321614174004BF824 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70A2FCB421614174004BF824 /* Kingfisher.framework in Frameworks */,
+				704F54252160E8D10068BA88 /* ActiveLabel.framework in Frameworks */,
 				7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */,
 				58ABFB592126C07800137583 /* WebKit.framework in Frameworks */,
 				700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */,
@@ -139,6 +160,11 @@
 			isa = PBXGroup;
 			children = (
 				58187F8A215A42D900CA842A /* Token.swift */,
+				5880FD70215C733D00DE273C /* Status.swift */,
+				70A2FCB1216119E3004BF824 /* Media.swift */,
+				5880FD72215C74DF00DE273C /* Account.swift */,
+				5880FD7D215CF4F300DE273C /* Document.swift */,
+				5880FD7F215CFF8500DE273C /* Entity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +176,15 @@
 				5880FD6C215B96A000DE273C /* OAuth.swift */,
 			);
 			path = APIs;
+			sourceTree = "<group>";
+		};
+		5880FD78215C9ABB00DE273C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5880FD79215C9AE500DE273C /* StatusTableViewCell.swift */,
+				5880FD7A215C9AE500DE273C /* StatusTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		58ABFB1D2126BA8100137583 = {
@@ -176,12 +211,12 @@
 		58ABFB282126BA8100137583 /* TomorrowLand */ = {
 			isa = PBXGroup;
 			children = (
+				709228C62161108F004912CB /* Services */,
 				58187F82215A396100CA842A /* Mastodon */,
+				5880FD78215C9ABB00DE273C /* Views */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
-				5880FD66215B8B3400DE273C /* MastodonLogin.swift */,
-				5880FD6E215C548900DE273C /* MastodonLogin+TomorrowLand.swift */,
-				5880FD68215B8D5D00DE273C /* PublicViewController.swift */,
-				5880FD69215B8D5D00DE273C /* PublicViewController.xib */,
+				5880FD74215C99C100DE273C /* PublicViewController.swift */,
+				5880FD75215C99C100DE273C /* PublicViewController.xib */,
 				58187F84215A3B9300CA842A /* HomeViewController.swift */,
 				58187F85215A3B9300CA842A /* HomeViewController.xib */,
 				58ABFB302126BA8200137583 /* Assets.xcassets */,
@@ -213,11 +248,23 @@
 		58ABFB572126C07800137583 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70A2FCB321614174004BF824 /* Kingfisher.framework */,
+				704F54262160E8DF0068BA88 /* AlamofireImage.framework */,
+				704F54242160E8D10068BA88 /* ActiveLabel.framework */,
 				7000403E2159434000FB782F /* KeychainSwift.framework */,
 				700AB5E82157837E005C5150 /* Alamofire.framework */,
 				58ABFB582126C07800137583 /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		709228C62161108F004912CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5880FD66215B8B3400DE273C /* MastodonLogin.swift */,
+				709228C4216101CA004912CB /* MastodonTimeline.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,8 +378,9 @@
 				58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */,
 				58187F87215A3B9300CA842A /* HomeViewController.xib in Resources */,
 				58ABFB312126BA8200137583 /* Assets.xcassets in Resources */,
-				5880FD6B215B8D5D00DE273C /* PublicViewController.xib in Resources */,
+				5880FD77215C99C100DE273C /* PublicViewController.xib in Resources */,
 				70377970215771BE00064392 /* OAuth2WebViewController.xib in Resources */,
+				5880FD7C215C9AE500DE273C /* StatusTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,12 +412,16 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ActiveLabel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ActiveLabel.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -384,15 +436,21 @@
 			files = (
 				58187F8B215A42D900CA842A /* Token.swift in Sources */,
 				7037797621577F6A00064392 /* Constants.swift in Sources */,
-				5880FD6F215C548900DE273C /* MastodonLogin+TomorrowLand.swift in Sources */,
+				5880FD76215C99C100DE273C /* PublicViewController.swift in Sources */,
 				58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */,
-				5880FD6A215B8D5D00DE273C /* PublicViewController.swift in Sources */,
+				5880FD73215C74DF00DE273C /* Account.swift in Sources */,
+				709228C5216101CA004912CB /* MastodonTimeline.swift in Sources */,
 				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
 				703779722157750D00064392 /* Keys.swift in Sources */,
 				58187F8F215A4A3D00CA842A /* Timeline.swift in Sources */,
 				58187F86215A3B9300CA842A /* HomeViewController.swift in Sources */,
 				7037796F215771BE00064392 /* OAuth2WebViewController.swift in Sources */,
 				58187F89215A41D200CA842A /* Mastodon.swift in Sources */,
+				5880FD7B215C9AE500DE273C /* StatusTableViewCell.swift in Sources */,
+				5880FD71215C733D00DE273C /* Status.swift in Sources */,
+				70A2FCB2216119E3004BF824 /* Media.swift in Sources */,
+				5880FD7E215CF4F300DE273C /* Document.swift in Sources */,
+				5880FD80215CFF8500DE273C /* Entity.swift in Sources */,
 				7037796A2157707700064392 /* AuthenticationViewController.swift in Sources */,
 				5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */,
 				5880FD6D215B96A000DE273C /* OAuth.swift in Sources */,

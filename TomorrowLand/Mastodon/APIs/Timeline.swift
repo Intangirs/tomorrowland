@@ -14,13 +14,13 @@ extension Mastodon {
         enum TimelineType {
             case home, `public`
         }
-        
+
         var type: TimelineType
 
         fileprivate var maxId: String = ""
         fileprivate var sinceId: String = ""
         fileprivate var endpoint: String
-        
+
         init(type: TimelineType, maxId: String = "", sinceId: String = "") {
             self.type = type
             endpoint = "https://\(Mastodon.shared.hostname)"
@@ -31,25 +31,35 @@ extension Mastodon {
                 endpoint += "\(Mastodon.Constants.timelinesPublicPath)"
             }
         }
-        
-        func fetch() {
+
+        func fetch(completion: @escaping ([Status]) -> Void) {
             var header = [String: String]()
             if type == .home {
                 header = [
                     "Authorization": "Bearer \(Mastodon.shared.token)"
                 ]
             }
-            
+
             Alamofire.request(endpoint,
                 method: .get,
                 parameters: nil,
                 encoding: URLEncoding.queryString,
                 headers: header).validate()
-                .responseJSON { (response) in
-                    debugPrint(response.response?.allHeaderFields)
-                    debugPrint(response.value)
+                .responseData { (response) in
+                    switch response.result {
+                    case .success(let value):
+                        do {
+                            let decoder = JSONDecoder()
+                            let statuses: [Status] = try decoder.decode([Status].self, from: value)
+                            completion(statuses)
+                        } catch {
+                            debugPrint(error)
+                        }
+                    case .failure(let error):
+                        debugPrint(error)
+                    }
             }
         }
-        
+
     }
 }

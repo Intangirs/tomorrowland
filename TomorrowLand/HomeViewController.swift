@@ -7,37 +7,33 @@
 //
 
 import UIKit
-import Alamofire
 
 class HomeViewController: UIViewController, MastodonLoginRequired {
+    var timelineWorker: TimeLineWorker?
+
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Home".localized()
+        self.timelineWorker = TimeLineWorker(with: self.tableView)
+        commonSetup(worker: self.timelineWorker!)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         signIntoFederation { result in
             guard result else {
                 return
             }
-            Mastodon.Timeline(type: .home).fetch()
+            Mastodon.Timeline(type: .home).fetch(completion: { (statuses) in
+                DispatchQueue.main.async {
+                    self.timelineWorker?.reload(with: statuses)
+                }
+            })
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

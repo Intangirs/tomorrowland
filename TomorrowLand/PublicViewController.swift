@@ -10,12 +10,16 @@ import UIKit
 
 class PublicViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.title = "Public".localized()
-        Mastodon.Timeline(type: .public).fetch()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Mastodon.Timeline(type: .public).fetch()
+    }
 }

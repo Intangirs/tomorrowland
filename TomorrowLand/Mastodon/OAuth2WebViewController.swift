@@ -64,12 +64,4 @@ extension OAuth2WebViewController: WKNavigationDelegate {
         }
         decisionHandler(.allow)
     }
-
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        dismiss(animated: true, completion: nil)
-    }
-
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-        dismiss(animated: true, completion: nil)
-    }
 }

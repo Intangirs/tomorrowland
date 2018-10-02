@@ -14,6 +14,7 @@ class StatusTableViewCell: UITableViewCell {
 
     static let kIdentifier = "StatusTableViewCell"
 
+    @IBOutlet weak var boostedLabel: UILabel!
     @IBOutlet weak var attachementBottomSpace: NSLayoutConstraint!
     @IBOutlet weak var attatchmentView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
@@ -28,7 +29,6 @@ class StatusTableViewCell: UITableViewCell {
         // Initialization code
         avatarImage.layer.cornerRadius = 6.0
         avatarImage.clipsToBounds = true
-        contentView.backgroundColor = UIColor.darkGray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -39,6 +39,7 @@ class StatusTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+        boostedLabel.text = ""
     }
 
     public func configure(status: Status) {
@@ -46,13 +47,15 @@ class StatusTableViewCell: UITableViewCell {
         previewImageHeight.constant = 168
         contentLabel.textColor = UIColor.white
         usernameLabel.textColor = UIColor.white
-
+        boostedLabel.text = ""
+        
         contentLabel.enabledTypes = [.mention, .hashtag, .url]
         contentLabel.handleURLTap { url in
             self.handleURLTapped?(url)
         }
 
         if let reblog_status = status.reblog {
+            boostedLabel.text = "\(status.account.display_name) boosted"
             configureContent(reblog_status)
         } else {
             configureContent(status)

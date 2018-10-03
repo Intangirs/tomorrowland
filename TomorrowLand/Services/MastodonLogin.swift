@@ -15,18 +15,20 @@ protocol MastodonLoginRequired {
 extension MastodonLoginRequired where Self: UIViewController {
 
     func signIntoFederation(instance: String = "mastodon.social", shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {
+        if let token = KeychainSwift(keyPrefix: "TL").get(instance), token.count > 0 {
+            Mastodon.load(hostname: instance, token: token)
+        } else {
+            Mastodon.load(hostname: instance, token: "")
+        }
         
         guard shouldAuthenticate else {
-            Mastodon.load(hostname: instance, token: "")
             done(true)
             return
         }
         
-        if let token = KeychainSwift(keyPrefix: "TL").get(instance), token.count > 0 {
-            Mastodon.load(hostname: instance, token: token)
+        if Mastodon.shared.token.count > 0 {
             done(true)
         } else {
-            Mastodon.load(hostname: instance)
             Mastodon.addAccount(on: self) { success, hostname, newToken in
                 guard success, let host = hostname, let token = newToken else {
                     done(false)
@@ -34,8 +36,7 @@ extension MastodonLoginRequired where Self: UIViewController {
                 }
 
                 // persist data into secure storage
-                Mastodon.shared.hostname = host
-                Mastodon.shared.token = token
+                Mastodon.load(hostname: host, token: token)
                 KeychainSwift(keyPrefix: "TL").set(token, forKey: host)
                 done(true)
             }

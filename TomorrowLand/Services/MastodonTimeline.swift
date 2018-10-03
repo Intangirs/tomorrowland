@@ -49,7 +49,10 @@ extension UIViewController {
 
 class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
     var statuses: [Status]
+    var maxId: String
     var tableView: UITableView
+    var isLoadingMore: Bool = false
+    var timeline: Mastodon.Timeline
 
     var handleURLTap: ((URL) -> Void)?
     var didCellSelected: ((UITableView, IndexPath, Status) -> Void)?
@@ -57,6 +60,9 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     init(with tableView: UITableView) {
         self.statuses = []
+        self.maxId = ""
+        self.timeline = Mastodon.Timeline(type: .public)
+        
         self.tableView = tableView
         super.init()
 
@@ -71,11 +77,76 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
         process(self)
     }
 
-    func reload(with statuses: [Status]) {
-        self.statuses = statuses
-        self.tableView.reloadData()
-    }
+    func fetch(initially: Bool,
+               timelineType: Mastodon.Timeline.TimelineType,
+               hashTag: String,
+               listId: String) {
+        var options: [String: String] = [:]
 
+        if !initially, self.maxId.count > 0 {
+            options["max_id"] = self.maxId
+        }
+        
+        self.timeline = Mastodon.Timeline(type: timelineType,
+                          hashtag: hashTag,
+                          listId: listId)
+        
+        self.isLoadingMore = true
+        self.timeline.fetch(options: options,
+                            completion: { (headers, statuses) in
+                            if let headers = headers, let link = headers["Link"] as? String {
+                                let result = self.extractMaxMinId(link: link)
+                                self.maxId = result.0
+                                debugPrint(self.maxId)
+                            }
+                            
+                            if initially {
+                                self.statuses = statuses
+                            } else {
+                                self.statuses.append(contentsOf: statuses)
+                            }
+                            
+                            self.isLoadingMore = false
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                          })
+    }
+    
+    fileprivate func extractMaxMinId(link: String) -> (String, String) {
+        let elements = link.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").split(separator: ",")
+        var maxId = ""
+        var sinceId = ""
+        
+        elements.forEach { (element) in
+            let link = element.split(separator: ";")[0].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            let rel = element.split(separator: ";")[1].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+            if rel.contains("next"), let url = URL(string: link) {
+                if let query = url.query {
+                    query.split(separator: "&").forEach({ (param) in
+                        let keyValue = param.split(separator: "=")
+                        if keyValue[0] == "max_id" {
+                            maxId = String(keyValue[1])
+                        }
+                    })
+                }
+            }
+            
+            if rel.contains("prev"), let url = URL(string: link) {
+                if let query = url.query {
+                    query.split(separator: "&").forEach({ (param) in
+                        let keyValue = param.split(separator: "=")
+                        if keyValue[0] == "min_id" {
+                            sinceId = String(keyValue[1])
+                        }
+                    })
+                }
+            }
+        }
+        
+        return (maxId, sinceId)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -98,5 +169,23 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         didCellSelected?(tableView, indexPath, statuses[indexPath.row])
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let contentSize = scrollView.contentSize.height
+        let tableSize = scrollView.frame.size.height - scrollView.contentInset.top - scrollView.contentInset.bottom
+        let canLoadFromBottom = contentSize > tableSize
+        
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        let difference = maximumOffset - currentOffset
+        
+        if canLoadFromBottom, difference <= -60.0 {
+            
+            if (self.isLoadingMore == false) {                
+                self.fetch(initially: false, timelineType: self.timeline.type, hashTag: self.timeline.hashTag, listId: self.timeline.listId)
+            }
+        }
     }
 }

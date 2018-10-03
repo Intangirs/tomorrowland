@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 extension Mastodon {
-    struct OAuth {
+    class OAuth {
         static func token(code: String, completion: @escaping (Bool, String?) -> Void) {
             let endpoint = "https://\(Mastodon.shared.hostname)\(Mastodon.Constants.oauthTokenPath)"
             Alamofire.request(endpoint,

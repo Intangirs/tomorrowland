@@ -10,20 +10,23 @@ import Foundation
 import Alamofire
 
 extension Mastodon {
-    struct Timeline {
+    class Timeline {
         enum TimelineType {
             case home, `public`, hashtag
         }
 
         var type: TimelineType
+        var hashTag: String
+        var listId: String
 
-        fileprivate var maxId: String = ""
-        fileprivate var sinceId: String = ""
-        fileprivate var endpoint: String
-
-        init(type: TimelineType, maxId: String = "", sinceId: String = "", hashtag: String = "", listId: String = "") {
+        init(type: TimelineType, hashtag: String = "", listId: String = "") {
             self.type = type
-            endpoint = "https://\(Mastodon.shared.hostname)"
+            self.hashTag = hashtag
+            self.listId = listId
+        }
+        
+        private var endpoint: String {
+            var endpoint = "https://\(Mastodon.shared.hostname)"
             switch type {
             case .home:
                 endpoint += "\(Mastodon.Constants.timelinesHomePath)"
@@ -31,21 +34,24 @@ extension Mastodon {
                 endpoint += "\(Mastodon.Constants.timelinesPublicPath)"
             case .hashtag:
                 endpoint += "\(Mastodon.Constants.timelinesHashtagPath)"
-                endpoint = endpoint.replacingOccurrences(of: ":hashtag", with: hashtag.urlEncoded())
+                endpoint = endpoint.replacingOccurrences(of: ":hashtag", with: self.hashTag.urlEncoded())
             }
+
+            return endpoint
         }
 
-        func fetch(completion: @escaping ([Status]) -> Void) {
+        func fetch(options: [String: String] = [:], completion: @escaping ([AnyHashable: Any]?
+, [Status]) -> Void) {
             var header = [String: String]()
             if type == .home {
                 header = [
                     "Authorization": "Bearer \(Mastodon.shared.token)"
                 ]
             }
-
-            Alamofire.request(endpoint,
+            
+            Alamofire.request(self.endpoint,
                 method: .get,
-                parameters: nil,
+                parameters: options,
                 encoding: URLEncoding.queryString,
                 headers: header).validate()
                 .responseData { (response) in
@@ -54,7 +60,7 @@ extension Mastodon {
                         do {
                             let decoder = JSONDecoder()
                             let statuses: [Status] = try decoder.decode([Status].self, from: value)
-                            completion(statuses)
+                            completion(response.response?.allHeaderFields, statuses)
                         } catch {
                             debugPrint(error)
                         }
@@ -63,6 +69,5 @@ extension Mastodon {
                     }
             }
         }
-
     }
 }

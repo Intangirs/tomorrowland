@@ -12,7 +12,7 @@ import Alamofire
 extension Mastodon {
     struct Timeline {
         enum TimelineType {
-            case home, `public`
+            case home, `public`, hashtag
         }
 
         var type: TimelineType
@@ -21,7 +21,7 @@ extension Mastodon {
         fileprivate var sinceId: String = ""
         fileprivate var endpoint: String
 
-        init(type: TimelineType, maxId: String = "", sinceId: String = "") {
+        init(type: TimelineType, maxId: String = "", sinceId: String = "", hashtag: String = "", listId: String = "") {
             self.type = type
             endpoint = "https://\(Mastodon.shared.hostname)"
             switch type {
@@ -29,6 +29,9 @@ extension Mastodon {
                 endpoint += "\(Mastodon.Constants.timelinesHomePath)"
             case .public:
                 endpoint += "\(Mastodon.Constants.timelinesPublicPath)"
+            case .hashtag:
+                endpoint += "\(Mastodon.Constants.timelinesHashtagPath)"
+                endpoint = endpoint.replacingOccurrences(of: ":hashtag", with: hashtag.urlEncoded())
             }
         }
 

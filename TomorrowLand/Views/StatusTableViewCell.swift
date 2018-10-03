@@ -23,6 +23,7 @@ class StatusTableViewCell: UITableViewCell {
 
     @IBOutlet weak var previewImageHeight: NSLayoutConstraint!
     var handleURLTapped: ((URL) -> Void)?
+    var handleHashtagTapped: ((String) -> Void)?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,8 +51,13 @@ class StatusTableViewCell: UITableViewCell {
         boostedLabel.text = ""
         
         contentLabel.enabledTypes = [.mention, .hashtag, .url]
+        
         contentLabel.handleURLTap { url in
             self.handleURLTapped?(url)
+        }
+        
+        contentLabel.handleHashtagTap { (hashtag) in
+            self.handleHashtagTapped?(hashtag)
         }
 
         if let reblog_status = status.reblog {

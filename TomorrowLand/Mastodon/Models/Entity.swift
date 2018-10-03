@@ -2,7 +2,7 @@
 //  Entity.swift
 //  TomorrowLand
 //
-//  Created by Ohashi, Yusuke a | Mike | ECMD on 2018/09/27.
+//  Created by Yusuke Ohashi on 2018/09/27.
 //  Copyright © 2018 Yusuke Ohashi. All rights reserved.
 //
 

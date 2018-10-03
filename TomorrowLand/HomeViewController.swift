@@ -12,28 +12,32 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
     var timelineWorker: TimeLineWorker?
 
     @IBOutlet weak var tableView: UITableView!
+    var timelineType: Mastodon.Timeline.TimelineType = .public
+    var keyword: String = ""
+    var hashtag: String = ""
+    var listId: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        self.title = "Home".localized()
+        self.title = viewTitle(by: timelineType)
         self.timelineWorker = TimeLineWorker(with: self.tableView)
         commonSetup(worker: self.timelineWorker!)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        signIntoFederation(shouldAuthenticate: self.timelineType == .home) { result in
+            guard result else { return }
 
-        signIntoFederation { result in
-            guard result else {
-                return
-            }
-            Mastodon.Timeline(type: .home).fetch(completion: { (statuses) in
-                DispatchQueue.main.async {
-                    self.timelineWorker?.reload(with: statuses)
-                }
-            })
+            Mastodon.Timeline(type: self.timelineType,
+                              hashtag: self.hashtag,
+                              listId: self.listId).fetch(completion: { (statuses) in
+                                DispatchQueue.main.async {
+                                    self.timelineWorker?.reload(with: statuses)
+                                }
+                              })
         }
     }
 }

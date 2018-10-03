@@ -100,7 +100,6 @@
 		703779732157751D00064392 /* Keys.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.sample.swift; sourceTree = "<group>"; };
 		7037797521577F6A00064392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		704F54242160E8D10068BA88 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
-		704F54262160E8DF0068BA88 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		709228C4216101CA004912CB /* MastodonTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonTimeline.swift; sourceTree = "<group>"; };
 		70A2FCB1216119E3004BF824 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		70A2FCB321614174004BF824 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -246,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				70A2FCB321614174004BF824 /* Kingfisher.framework */,
-				704F54262160E8DF0068BA88 /* AlamofireImage.framework */,
 				704F54242160E8D10068BA88 /* ActiveLabel.framework */,
 				7000403E2159434000FB782F /* KeychainSwift.framework */,
 				700AB5E82157837E005C5150 /* Alamofire.framework */,

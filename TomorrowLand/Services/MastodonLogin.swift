@@ -9,12 +9,19 @@
 import KeychainSwift
 
 protocol MastodonLoginRequired {
-    func signIntoFederation(instance: String, done: @escaping (Bool) -> Void)
+    func signIntoFederation(instance: String, shouldAuthenticate: Bool, done: @escaping (Bool) -> Void)
 }
 
 extension MastodonLoginRequired where Self: UIViewController {
 
-    func signIntoFederation(instance: String = "mastodon.social", done: @escaping (Bool) -> Void) {
+    func signIntoFederation(instance: String = "mastodon.social", shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {
+        
+        guard shouldAuthenticate else {
+            Mastodon.load(hostname: instance, token: "")
+            done(true)
+            return
+        }
+        
         if let token = KeychainSwift(keyPrefix: "TL").get(instance), token.count > 0 {
             Mastodon.load(hostname: instance, token: token)
             done(true)

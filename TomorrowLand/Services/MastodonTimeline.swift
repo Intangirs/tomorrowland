@@ -16,7 +16,34 @@ extension UIViewController {
                 let safari = SFSafariViewController(url: url)
                 self.present(safari, animated: true, completion: nil)
             }
+            
+            worker.didCellSelected = { tableView, indexPath, status in
+                Mastodon.Statuses(type: .status, id: status.id).fetch(completion: { (status) in
+                    print(status)
+                })
+            }
+            
+            worker.handleHashtagTap = { hashtag in
+                let hashtagTimeline = HomeViewController()
+                hashtagTimeline.timelineType = .hashtag
+                hashtagTimeline.hashtag = hashtag
+                self.present(hashtagTimeline, animated: true, completion: nil)
+            }
         })
+    }
+    
+    func viewTitle(by timelineType: Mastodon.Timeline.TimelineType) -> String {
+        var viewTitle = ""
+        switch timelineType {
+        case .home:
+            viewTitle = "Home".localized()
+        case .hashtag:
+            viewTitle = "Hashtag".localized()
+        default:
+            viewTitle = "Public".localized()
+        }
+        
+        return viewTitle
     }
 }
 
@@ -26,6 +53,7 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     var handleURLTap: ((URL) -> Void)?
     var didCellSelected: ((UITableView, IndexPath, Status) -> Void)?
+    var handleHashtagTap: ((String) -> Void)?
 
     init(with tableView: UITableView) {
         self.statuses = []
@@ -60,6 +88,7 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
         if let cell: StatusTableViewCell = tableView.dequeueReusableCell(withIdentifier: StatusTableViewCell.kIdentifier, for: indexPath) as? StatusTableViewCell {
             cell.configure(status: self.statuses[indexPath.row])
             cell.handleURLTapped = handleURLTap
+            cell.handleHashtagTapped = handleHashtagTap
             return cell
         }
 

@@ -13,6 +13,7 @@ class Status: Codable {
     let hyperLinks: [String: String]
     let account: Account
     let reblog: Status?
+    let id: String
     let media_attachments: [Media]
 
 //    let id: String
@@ -29,6 +30,7 @@ class Status: Codable {
         case content
         case account
         case reblog
+        case id
         case media_attachments
     }
 
@@ -39,6 +41,7 @@ class Status: Codable {
         account = try values.decode(Account.self, forKey: .account)
         reblog = try values.decodeIfPresent(Status.self, forKey: .reblog)
         media_attachments = try values.decode([Media].self, forKey: .media_attachments)
+        id = try values.decode(String.self, forKey: .id)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -47,5 +50,6 @@ class Status: Codable {
         try container.encode(account, forKey: .account)
         try container.encodeIfPresent(reblog, forKey: .reblog)
         try container.encode(media_attachments, forKey: .media_attachments)
+        try container.encode(id, forKey: .id)
     }
 }

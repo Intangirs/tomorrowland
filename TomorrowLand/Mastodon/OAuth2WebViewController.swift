@@ -52,9 +52,10 @@ extension OAuth2WebViewController: WKNavigationDelegate {
                 if let code = codequery?["code"] {
 
                     Mastodon.OAuth.token(code: code) { (result, token) in
-                        self.authCallBack?(result, token)
                         DispatchQueue.main.async {
-                            self.dismiss(animated: false, completion: nil)
+                            self.dismiss(animated: false, completion: {
+                                self.authCallBack?(result, token)
+                            })
                         }
                         decisionHandler(.cancel)
                     }

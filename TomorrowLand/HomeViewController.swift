@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
     var keyword: String = ""
     var hashtag: String = ""
     var listId: String = ""
+    var maxId: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +28,17 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        signIntoFederation(shouldAuthenticate: self.timelineType == .home) { result in
-            guard result else { return }
-
-            Mastodon.Timeline(type: self.timelineType,
-                              hashtag: self.hashtag,
-                              listId: self.listId).fetch(completion: { (statuses) in
-                                DispatchQueue.main.async {
-                                    self.timelineWorker?.reload(with: statuses)
-                                }
-                              })
+        if self.timelineWorker?.statuses.count == 0 || self.timelineType == .public {
+            reloadTimeline(initially: true)
         }
     }
+}
+
+extension HomeViewController {
+    func reloadTimeline(initially: Bool) {
+        signIntoFederation(shouldAuthenticate: self.timelineType == .home) { result in
+            guard result else { return }
+            self.timelineWorker?.fetch(initially: initially, timelineType: self.timelineType, hashTag: "", listId: "")
+        }
+    }    
 }

@@ -24,11 +24,11 @@ class AuthenticationViewController: UIViewController {
         let web = OAuth2WebViewController()
         web.hostName = instanceHostLabel.text ?? ""
         web.authCallBack = { result, token in
-            self.completeBlock?(result, result ? web.hostName: nil, token)
-
             DispatchQueue.main.async {
                 if result {
-                    self.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: {
+                        self.completeBlock?(result, result ? web.hostName: nil, token)
+                    })
                 }
             }
         }

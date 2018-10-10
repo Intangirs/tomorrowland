@@ -12,7 +12,7 @@ import Foundation
 import Alamofire
 
 extension Mastodon {
-    struct Statuses {
+    class Statuses {
         
         enum StatusesType {
             case status, context, card

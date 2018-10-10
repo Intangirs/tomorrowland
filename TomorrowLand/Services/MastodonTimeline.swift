@@ -52,12 +52,14 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
     var maxId: String
     var tableView: UITableView
     var isLoadingMore: Bool = false
+    var shouldLoadMore: Bool = false
     var timeline: Mastodon.Timeline
-
+    
     var handleURLTap: ((URL) -> Void)?
     var didCellSelected: ((UITableView, IndexPath, Status) -> Void)?
     var handleHashtagTap: ((String) -> Void)?
-
+    private let refreshControl = UIRefreshControl()
+    
     init(with tableView: UITableView) {
         self.statuses = []
         self.maxId = ""
@@ -65,7 +67,9 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
         
         self.tableView = tableView
         super.init()
-
+        
+        refreshControl.addTarget(self, action: #selector(refreshTimeline), for: .valueChanged)
+        self.tableView.refreshControl = refreshControl
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.estimatedRowHeight = 44.0
@@ -76,41 +80,57 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
     func configure(process: (TimeLineWorker) -> Void) {
         process(self)
     }
-
+    
+    @objc func refreshTimeline() {
+        fetch(initially: true,
+              timelineType: self.timeline.type,
+              hashTag: self.timeline.hashTag,
+              listId: self.timeline.listId)
+    }
+    
     func fetch(initially: Bool,
                timelineType: Mastodon.Timeline.TimelineType,
                hashTag: String,
                listId: String) {
         var options: [String: String] = [:]
-
+        
         if !initially, self.maxId.count > 0 {
             options["max_id"] = self.maxId
         }
         
-        self.timeline = Mastodon.Timeline(type: timelineType,
-                          hashtag: hashTag,
-                          listId: listId)
+        self.timeline.type = timelineType
+        self.timeline.hashTag = hashTag
+        self.timeline.listId = listId
         
         self.isLoadingMore = true
         self.timeline.fetch(options: options,
                             completion: { (headers, statuses) in
-                            if let headers = headers, let link = headers["Link"] as? String {
-                                let result = self.extractMaxMinId(link: link)
-                                self.maxId = result.0
-                                debugPrint(self.maxId)
-                            }
-                            
-                            if initially {
-                                self.statuses = statuses
-                            } else {
-                                self.statuses.append(contentsOf: statuses)
-                            }
-                            
-                            self.isLoadingMore = false
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
-                            }
-                          })
+                                
+                                if let headers = headers, let link = headers["Link"] as? String {
+                                    let result = self.extractMaxMinId(link: link)
+                                    self.maxId = result.0
+                                    debugPrint(self.maxId)
+                                }
+                                
+                                if initially {
+                                    self.statuses = statuses
+                                } else {
+                                    self.statuses.append(contentsOf: statuses)
+                                }
+                                
+                                self.isLoadingMore = false
+                                
+                                DispatchQueue.main.async {
+                                    if self.refreshControl.isRefreshing {
+                                        self.refreshControl.endRefreshing()
+                                    }
+
+                                    if self.statuses.count > 0, statuses.count > 0 {
+                                        self.tableView.reloadData()
+                                        self.tableView.scrollToRow(at: IndexPath(row: self.statuses.count - statuses.count, section: 0), at: UITableViewScrollPosition.middle, animated: false)
+                                    }
+                                }
+        })
     }
     
     fileprivate func extractMaxMinId(link: String) -> (String, String) {
@@ -150,11 +170,11 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.statuses.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell: StatusTableViewCell = tableView.dequeueReusableCell(withIdentifier: StatusTableViewCell.kIdentifier, for: indexPath) as? StatusTableViewCell {
             cell.configure(status: self.statuses[indexPath.row])
@@ -162,10 +182,10 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
             cell.handleHashtagTapped = handleHashtagTap
             return cell
         }
-
+        
         return UITableViewCell()
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         didCellSelected?(tableView, indexPath, statuses[indexPath.row])
@@ -181,11 +201,16 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         let difference = maximumOffset - currentOffset
         
-        if canLoadFromBottom, difference <= -60.0 {
-            
-            if (self.isLoadingMore == false) {                
-                self.fetch(initially: false, timelineType: self.timeline.type, hashTag: self.timeline.hashTag, listId: self.timeline.listId)
-            }
+        shouldLoadMore = canLoadFromBottom && difference <= -60.0
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if shouldLoadMore, self.isLoadingMore == false {
+            self.fetch(initially: false,
+                       timelineType: self.timeline.type,
+                       hashTag: self.timeline.hashTag,
+                       listId: self.timeline.listId)
+            shouldLoadMore = false
         }
     }
 }

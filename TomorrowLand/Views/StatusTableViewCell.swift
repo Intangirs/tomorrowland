@@ -72,7 +72,12 @@ class StatusTableViewCell: UITableViewCell {
 
     fileprivate func configureContent(_ status: Status) {
         contentLabel.text = status.content
-        usernameLabel.text = status.account.display_name
+        if status.account.display_name.count > 0 {
+            usernameLabel.text = status.account.display_name
+        } else {
+            usernameLabel.text = status.account.username
+        }
+        
         let url = URL(string: status.account.avatar)!
         avatarImage.kf.setImage(with: url)
 

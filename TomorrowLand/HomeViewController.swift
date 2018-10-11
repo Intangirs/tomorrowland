@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class HomeViewController: UIViewController, MastodonLoginRequired {
     var timelineWorker: TimeLineWorker?
@@ -28,17 +29,58 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if self.timelineWorker?.statuses.count == 0 || self.timelineType == .public {
-            reloadTimeline(initially: true)
+        signIntoFederation(shouldAuthenticate: self.timelineType == .home) { result in
+            guard result else { return }
+            self.timelineWorker?.start(type: self.timelineType, hashtag: self.hashtag, listId: self.listId)
         }
+    }
+    
+}
+
+// MARK: Helpers
+
+extension HomeViewController {
+    private func commonSetup(worker: TimeLineWorker) {
+        worker.handleURLTap = { url in
+            let safari = SFSafariViewController(url: url)
+            self.present(safari, animated: true, completion: nil)
+        }
+        
+        worker.didCellSelected = { tableView, indexPath, status in
+            Mastodon.Statuses(type: .status, id: status.id).fetch(completion: { (status) in
+                print(status)
+            })
+        }
+        
+        worker.handleHashtagTap = { hashtag in
+            let hashtagTimeline = HomeViewController()
+            hashtagTimeline.timelineType = .hashtag
+            hashtagTimeline.hashtag = hashtag
+            let hashNav = UINavigationController(rootViewController: hashtagTimeline)
+            self.present(hashNav, animated: true, completion: nil)
+        }
+        
+        if timelineType == .hashtag {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close".localized(), style: .plain, target: self, action: #selector(close))
+        }
+    }
+    
+    private func viewTitle(by timelineType: Mastodon.Timeline.TimelineType) -> String {
+        var viewTitle = ""
+        switch timelineType {
+        case .home:
+            viewTitle = "Home".localized()
+        case .hashtag:
+            viewTitle = "Hashtag".localized()
+        default:
+            viewTitle = "Public".localized()
+        }
+        
+        return viewTitle
+    }
+    
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
     }
 }
 
-extension HomeViewController {
-    func reloadTimeline(initially: Bool) {
-        signIntoFederation(shouldAuthenticate: self.timelineType == .home) { result in
-            guard result else { return }
-            self.timelineWorker?.fetch(initially: initially, timelineType: self.timelineType, hashTag: "", listId: "")
-        }
-    }    
-}

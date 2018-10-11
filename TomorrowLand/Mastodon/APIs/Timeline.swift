@@ -40,7 +40,7 @@ extension Mastodon {
             return endpoint
         }
 
-        func fetch(options: [String: String] = [:], completion: @escaping ([AnyHashable: Any]?
+        func fetch(options: [String: String] = [:], completion: @escaping (Headers?
 , [Status]) -> Void) {
             var header = [String: String]()
             if type == .home {
@@ -60,7 +60,13 @@ extension Mastodon {
                         do {
                             let decoder = JSONDecoder()
                             let statuses: [Status] = try decoder.decode([Status].self, from: value)
-                            completion(response.response?.allHeaderFields, statuses)
+
+                            var responseHeader: Headers? = nil
+                            if let header = response.response?.allHeaderFields {
+                                responseHeader = Headers(with: header)
+                            }
+
+                            completion(responseHeader, statuses)
                         } catch {
                             debugPrint(error)
                         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Mastodon.load(hostname: MastodonUtils.currentHost,
+                      token: MastodonUtils.currentToken,
+                      clientId: Keys.MASTODON_CLIENT_ID,
+                      secretId: Keys.MASTODON_CLIENT_SECRET,
+                      scope: Keys.MASTODON_SCOPE,
+                      redirectUri: Keys.MASTODON_REDIRECT_URI)
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = configureTabBarController()
         window?.makeKeyAndVisible()

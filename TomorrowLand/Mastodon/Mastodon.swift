@@ -13,9 +13,23 @@ class Mastodon {
 
     var hostname: String = ""
     var token: String = ""
+    var clientId: String = ""
+    var secretId: String = ""
+    var scope: String = ""
+    var redirectUri: String = ""
 
-    static func load(hostname: String, token: String = "") {
+    static func load(hostname: String,
+                     token: String = "",
+                     clientId: String = "",
+                     secretId: String = "",
+                     scope: String = "",
+                     redirectUri: String = "") {
         self.shared.hostname = hostname
+        self.shared.clientId = clientId
+        self.shared.secretId = secretId
+        self.shared.scope = scope
+        self.shared.redirectUri = redirectUri
+
         if token.count > 0 {
             self.shared.token = token
         }

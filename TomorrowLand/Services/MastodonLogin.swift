@@ -9,18 +9,12 @@
 import KeychainSwift
 
 protocol MastodonLoginRequired {
-    func signIntoFederation(instance: String, shouldAuthenticate: Bool, done: @escaping (Bool) -> Void)
+    func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void)
 }
 
 extension MastodonLoginRequired where Self: UIViewController {
 
-    func signIntoFederation(instance: String = "mastodon.social", shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {
-        if let token = KeychainSwift(keyPrefix: "TL").get(instance), token.count > 0 {
-            Mastodon.load(hostname: instance, token: token)
-        } else {
-            Mastodon.load(hostname: instance, token: "")
-        }
-        
+    func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {        
         guard shouldAuthenticate else {
             done(true)
             return
@@ -35,9 +29,7 @@ extension MastodonLoginRequired where Self: UIViewController {
                     return
                 }
 
-                // persist data into secure storage
-                Mastodon.load(hostname: host, token: token)
-                KeychainSwift(keyPrefix: "TL").set(token, forKey: host)
+                MastodonUtils.addAccount(host: host, token: token)
                 done(true)
             }
         }

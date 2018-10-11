@@ -12,6 +12,8 @@
 		58187F89215A41D200CA842A /* Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F88215A41D200CA842A /* Mastodon.swift */; };
 		58187F8B215A42D900CA842A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8A215A42D900CA842A /* Token.swift */; };
 		58187F8F215A4A3D00CA842A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8E215A4A3D00CA842A /* Timeline.swift */; };
+		587990362170329E008BB880 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587990352170329E008BB880 /* Emoji.swift */; };
+		58799038217036EE008BB880 /* MastodonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58799037217036EE008BB880 /* MastodonUtils.swift */; };
 		5880FD62215B886300DE273C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD64215B886300DE273C /* Localizable.strings */; };
 		5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD66215B8B3400DE273C /* MastodonLogin.swift */; };
 		5880FD6D215B96A000DE273C /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD6C215B96A000DE273C /* OAuth.swift */; };
@@ -27,6 +29,7 @@
 		58ABFB3F2126BA8200137583 /* TomorrowLandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB3E2126BA8200137583 /* TomorrowLandTests.swift */; };
 		58ABFB4A2126BA8300137583 /* TomorrowLandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */; };
 		58ABFB592126C07800137583 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ABFB582126C07800137583 /* WebKit.framework */; };
+		58C710E82170DCF5006E7E75 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C710E72170DCF5006E7E75 /* AlamofireImage.framework */; };
 		58D994B72164602200AD4230 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D994B62164602200AD4230 /* Statuses.swift */; };
 		7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7000403E2159434000FB782F /* KeychainSwift.framework */; };
 		700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700AB5E82157837E005C5150 /* Alamofire.framework */; };
@@ -39,9 +42,9 @@
 		7037797621577F6A00064392 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* Constants.swift */; };
 		704F54252160E8D10068BA88 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704F54242160E8D10068BA88 /* ActiveLabel.framework */; };
 		708D7116216FAE0E001C463F /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D7115216FAE0E001C463F /* Headers.swift */; };
+		708D7118216FC2D4001C463F /* CustomEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D7117216FC2D4001C463F /* CustomEmoji.swift */; };
 		709228C5216101CA004912CB /* MastodonTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709228C4216101CA004912CB /* MastodonTimeline.swift */; };
 		70A2FCB2216119E3004BF824 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A2FCB1216119E3004BF824 /* Media.swift */; };
-		70A2FCB421614174004BF824 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70A2FCB321614174004BF824 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,8 @@
 		58187F88215A41D200CA842A /* Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastodon.swift; sourceTree = "<group>"; };
 		58187F8A215A42D900CA842A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		58187F8E215A4A3D00CA842A /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		587990352170329E008BB880 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		58799037217036EE008BB880 /* MastodonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonUtils.swift; sourceTree = "<group>"; };
 		5880FD63215B886300DE273C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5880FD65215B887600DE273C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5880FD66215B8B3400DE273C /* MastodonLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonLogin.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomorrowLandUITests.swift; sourceTree = "<group>"; };
 		58ABFB4B2126BA8300137583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58ABFB582126C07800137583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		58C710E72170DCF5006E7E75 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		58D994B62164602200AD4230 /* Statuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
 		7000403E2159434000FB782F /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
 		700AB5E82157837E005C5150 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		7037797521577F6A00064392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		704F54242160E8D10068BA88 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
 		708D7115216FAE0E001C463F /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
+		708D7117216FC2D4001C463F /* CustomEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmoji.swift; sourceTree = "<group>"; };
 		709228C4216101CA004912CB /* MastodonTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastodonTimeline.swift; sourceTree = "<group>"; };
 		70A2FCB1216119E3004BF824 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		70A2FCB321614174004BF824 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -112,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A2FCB421614174004BF824 /* Kingfisher.framework in Frameworks */,
+				58C710E82170DCF5006E7E75 /* AlamofireImage.framework in Frameworks */,
 				704F54252160E8D10068BA88 /* ActiveLabel.framework in Frameworks */,
 				7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */,
 				58ABFB592126C07800137583 /* WebKit.framework in Frameworks */,
@@ -141,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				7037797521577F6A00064392 /* Constants.swift */,
-				703779712157750D00064392 /* Keys.swift */,
-				703779732157751D00064392 /* Keys.sample.swift */,
 				700AB5EA21578918005C5150 /* String+Mastodon.swift */,
 				7037796D215771BE00064392 /* OAuth2WebViewController.swift */,
 				7037796E215771BE00064392 /* OAuth2WebViewController.xib */,
@@ -165,6 +170,7 @@
 				5880FD7D215CF4F300DE273C /* Document.swift */,
 				5880FD7F215CFF8500DE273C /* Entity.swift */,
 				708D7115216FAE0E001C463F /* Headers.swift */,
+				587990352170329E008BB880 /* Emoji.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 				58187F8E215A4A3D00CA842A /* Timeline.swift */,
 				58D994B62164602200AD4230 /* Statuses.swift */,
 				5880FD6C215B96A000DE273C /* OAuth.swift */,
+				708D7117216FC2D4001C463F /* CustomEmoji.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -216,6 +223,8 @@
 				58187F82215A396100CA842A /* Mastodon */,
 				5880FD78215C9ABB00DE273C /* Views */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
+				703779712157750D00064392 /* Keys.swift */,
+				703779732157751D00064392 /* Keys.sample.swift */,
 				58187F84215A3B9300CA842A /* HomeViewController.swift */,
 				58187F85215A3B9300CA842A /* HomeViewController.xib */,
 				58ABFB302126BA8200137583 /* Assets.xcassets */,
@@ -247,6 +256,7 @@
 		58ABFB572126C07800137583 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58C710E72170DCF5006E7E75 /* AlamofireImage.framework */,
 				70A2FCB321614174004BF824 /* Kingfisher.framework */,
 				704F54242160E8D10068BA88 /* ActiveLabel.framework */,
 				7000403E2159434000FB782F /* KeychainSwift.framework */,
@@ -261,6 +271,7 @@
 			children = (
 				5880FD66215B8B3400DE273C /* MastodonLogin.swift */,
 				709228C4216101CA004912CB /* MastodonTimeline.swift */,
+				58799037217036EE008BB880 /* MastodonUtils.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -410,7 +421,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KeychainSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ActiveLabel.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -418,7 +429,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ActiveLabel.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -434,6 +445,7 @@
 				58187F8B215A42D900CA842A /* Token.swift in Sources */,
 				7037797621577F6A00064392 /* Constants.swift in Sources */,
 				58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */,
+				708D7118216FC2D4001C463F /* CustomEmoji.swift in Sources */,
 				5880FD73215C74DF00DE273C /* Account.swift in Sources */,
 				709228C5216101CA004912CB /* MastodonTimeline.swift in Sources */,
 				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
@@ -445,10 +457,12 @@
 				58187F89215A41D200CA842A /* Mastodon.swift in Sources */,
 				5880FD7B215C9AE500DE273C /* StatusTableViewCell.swift in Sources */,
 				5880FD71215C733D00DE273C /* Status.swift in Sources */,
+				587990362170329E008BB880 /* Emoji.swift in Sources */,
 				70A2FCB2216119E3004BF824 /* Media.swift in Sources */,
 				5880FD7E215CF4F300DE273C /* Document.swift in Sources */,
 				5880FD80215CFF8500DE273C /* Entity.swift in Sources */,
 				7037796A2157707700064392 /* AuthenticationViewController.swift in Sources */,
+				58799038217036EE008BB880 /* MastodonUtils.swift in Sources */,
 				5880FD67215B8B3400DE273C /* MastodonLogin.swift in Sources */,
 				5880FD6D215B96A000DE273C /* OAuth.swift in Sources */,
 				708D7116216FAE0E001C463F /* Headers.swift in Sources */,

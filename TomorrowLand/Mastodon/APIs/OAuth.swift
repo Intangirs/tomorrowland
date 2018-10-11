@@ -17,9 +17,9 @@ extension Mastodon {
                 method: .post,
                 parameters: [
                     "code": code,
-                    "client_id": Keys.MASTODON_CLIENT_ID,
-                    "client_secret": Keys.MASTODON_CLIENT_SECRET,
-                    "redirect_uri": Keys.MASTODON_REDIRECT_URI,
+                    "client_id": Mastodon.shared.clientId,
+                    "client_secret": Mastodon.shared.secretId,
+                    "redirect_uri": Mastodon.shared.redirectUri,
                     "grant_type": "authorization_code"],
                 encoding: URLEncoding.httpBody,
                 headers: nil)

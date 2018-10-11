@@ -22,16 +22,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6Z-CE-p3D">
-                    <rect key="frame" x="89" y="108" width="202" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6Z-CE-p3D">
+                    <rect key="frame" x="60" y="140" width="255" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-cY-3N4">
-                    <rect key="frame" x="157" y="194" width="66" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Yo-cY-3N4">
+                    <rect key="frame" x="154.5" y="230" width="66" height="30"/>
                     <state key="normal" title="Authorize"/>
                     <connections>
                         <action selector="startAuthorization:" destination="-1" eventType="touchUpInside" id="3Id-hJ-sgV"/>
@@ -39,6 +37,13 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Yo-cY-3N4" firstAttribute="top" secondItem="j6Z-CE-p3D" secondAttribute="bottom" constant="60" id="Isy-7b-Drx"/>
+                <constraint firstItem="j6Z-CE-p3D" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="VX8-o9-w62"/>
+                <constraint firstItem="j6Z-CE-p3D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="fDB-b9-1KN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="j6Z-CE-p3D" secondAttribute="trailing" constant="60" id="oDJ-E6-QKW"/>
+                <constraint firstItem="8Yo-cY-3N4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rz4-k2-Pun"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="39.200000000000003" y="46.326836581709152"/>
         </view>

@@ -7,47 +7,8 @@
 //
 
 import UIKit
-import SafariServices
 
-extension UIViewController {
-    func commonSetup(worker: TimeLineWorker) {
-        worker.configure(process: { (worker) in
-            worker.handleURLTap = { url in
-                let safari = SFSafariViewController(url: url)
-                self.present(safari, animated: true, completion: nil)
-            }
-            
-            worker.didCellSelected = { tableView, indexPath, status in
-                Mastodon.Statuses(type: .status, id: status.id).fetch(completion: { (status) in
-                    print(status)
-                })
-            }
-            
-            worker.handleHashtagTap = { hashtag in
-                let hashtagTimeline = HomeViewController()
-                hashtagTimeline.timelineType = .hashtag
-                hashtagTimeline.hashtag = hashtag
-                self.present(hashtagTimeline, animated: true, completion: nil)
-            }
-        })
-    }
-    
-    func viewTitle(by timelineType: Mastodon.Timeline.TimelineType) -> String {
-        var viewTitle = ""
-        switch timelineType {
-        case .home:
-            viewTitle = "Home".localized()
-        case .hashtag:
-            viewTitle = "Hashtag".localized()
-        default:
-            viewTitle = "Public".localized()
-        }
-        
-        return viewTitle
-    }
-}
-
-class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
+class TimeLineWorker: NSObject {
     var statuses: [Status]
     var maxId: String
     var tableView: UITableView
@@ -60,7 +21,7 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
     var handleHashtagTap: ((String) -> Void)?
     private let refreshControl = UIRefreshControl()
     
-    init(with tableView: UITableView) {
+    public init(with tableView: UITableView) {
         self.statuses = []
         self.maxId = ""
         self.timeline = Mastodon.Timeline(type: .public)
@@ -77,96 +38,15 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
         self.tableView.register(UINib(nibName: StatusTableViewCell.kIdentifier, bundle: nil), forCellReuseIdentifier: StatusTableViewCell.kIdentifier)
     }
     
-    func configure(process: (TimeLineWorker) -> Void) {
-        process(self)
-    }
-    
-    @objc func refreshTimeline() {
-        fetch(initially: true,
-              timelineType: self.timeline.type,
-              hashTag: self.timeline.hashTag,
-              listId: self.timeline.listId)
-    }
-    
-    func fetch(initially: Bool,
-               timelineType: Mastodon.Timeline.TimelineType,
-               hashTag: String,
-               listId: String) {
-        var options: [String: String] = [:]
-        
-        if !initially, self.maxId.count > 0 {
-            options["max_id"] = self.maxId
+    public func start(type: Mastodon.Timeline.TimelineType, hashtag: String, listId: String) {
+        if self.statuses.count == 0 || type == .public {
+            fetch(initially: true, timelineType: type, hashTag: hashtag, listId: listId)
         }
-        
-        self.timeline.type = timelineType
-        self.timeline.hashTag = hashTag
-        self.timeline.listId = listId
-        
-        self.isLoadingMore = true
-        self.timeline.fetch(options: options,
-                            completion: { (headers, statuses) in
-                                
-                                if let headers = headers, let link = headers["Link"] as? String {
-                                    let result = self.extractMaxMinId(link: link)
-                                    self.maxId = result.0
-                                    debugPrint(self.maxId)
-                                }
-                                
-                                if initially {
-                                    self.statuses = statuses
-                                } else {
-                                    self.statuses.append(contentsOf: statuses)
-                                }
-                                
-                                self.isLoadingMore = false
-                                
-                                DispatchQueue.main.async {
-                                    if self.refreshControl.isRefreshing {
-                                        self.refreshControl.endRefreshing()
-                                    }
+    }
+    
+}
 
-                                    if self.statuses.count > 0, statuses.count > 0 {
-                                        self.tableView.reloadData()
-                                        self.tableView.scrollToRow(at: IndexPath(row: self.statuses.count - statuses.count, section: 0), at: UITableViewScrollPosition.middle, animated: false)
-                                    }
-                                }
-        })
-    }
-    
-    fileprivate func extractMaxMinId(link: String) -> (String, String) {
-        let elements = link.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").split(separator: ",")
-        var maxId = ""
-        var sinceId = ""
-        
-        elements.forEach { (element) in
-            let link = element.split(separator: ";")[0].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            let rel = element.split(separator: ";")[1].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-            if rel.contains("next"), let url = URL(string: link) {
-                if let query = url.query {
-                    query.split(separator: "&").forEach({ (param) in
-                        let keyValue = param.split(separator: "=")
-                        if keyValue[0] == "max_id" {
-                            maxId = String(keyValue[1])
-                        }
-                    })
-                }
-            }
-            
-            if rel.contains("prev"), let url = URL(string: link) {
-                if let query = url.query {
-                    query.split(separator: "&").forEach({ (param) in
-                        let keyValue = param.split(separator: "=")
-                        if keyValue[0] == "min_id" {
-                            sinceId = String(keyValue[1])
-                        }
-                    })
-                }
-            }
-        }
-        
-        return (maxId, sinceId)
-    }
-    
+extension TimeLineWorker: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -212,5 +92,58 @@ class TimeLineWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
                        listId: self.timeline.listId)
             shouldLoadMore = false
         }
+    }
+}
+
+extension TimeLineWorker {
+    private func fetch(initially: Bool,
+                       timelineType: Mastodon.Timeline.TimelineType,
+                       hashTag: String,
+                       listId: String) {
+        var options: [String: String] = [:]
+        
+        if !initially, self.maxId.count > 0 {
+            options["max_id"] = self.maxId
+        }
+        
+        self.timeline.type = timelineType
+        self.timeline.hashTag = hashTag
+        self.timeline.listId = listId
+        
+        self.isLoadingMore = true
+        self.timeline.fetch(options: options,
+                            completion: { (headers, statuses) in
+                                
+                                if let headers = headers {
+                                    self.maxId = headers.maxId
+                                    debugPrint(self.maxId)
+                                }
+                                
+                                if initially {
+                                    self.statuses = statuses
+                                } else {
+                                    self.statuses.append(contentsOf: statuses)
+                                }
+                                
+                                self.isLoadingMore = false
+                                
+                                DispatchQueue.main.async {
+                                    if self.refreshControl.isRefreshing {
+                                        self.refreshControl.endRefreshing()
+                                    }
+                                    
+                                    if self.statuses.count > 0, statuses.count > 0 {
+                                        self.tableView.reloadData()
+                                        self.tableView.scrollToRow(at: IndexPath(row: self.statuses.count - statuses.count, section: 0), at: UITableViewScrollPosition.middle, animated: false)
+                                    }
+                                }
+        })
+    }
+    
+    @objc func refreshTimeline() {
+        fetch(initially: true,
+              timelineType: self.timeline.type,
+              hashTag: self.timeline.hashTag,
+              listId: self.timeline.listId)
     }
 }

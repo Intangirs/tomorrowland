@@ -24,15 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func configureTabBarController() -> UITabBarController {
         let tabBarViewController = UITabBarController()
+
         let homeViewController = HomeViewController()
         homeViewController.timelineType = .home
-        homeViewController.tabBarItem = UITabBarItem(title: "Home".localized(), image: nil, tag: 0)
 
         let publicViewController = HomeViewController()
-        publicViewController.tabBarItem = UITabBarItem(title: "Public".localized(), image: nil, tag: 1)
 
-        tabBarViewController.viewControllers = [homeViewController, publicViewController]
-
+        let homeNav = UINavigationController(rootViewController: homeViewController)
+        homeNav.tabBarItem = UITabBarItem(title: "Home".localized(), image: nil, tag: 0)
+        let publicNav = UINavigationController(rootViewController: publicViewController)
+        publicNav.tabBarItem = UITabBarItem(title: "Public".localized(), image: nil, tag: 1)
+        
+        tabBarViewController.viewControllers = [homeNav, publicNav]
         return tabBarViewController
     }
 

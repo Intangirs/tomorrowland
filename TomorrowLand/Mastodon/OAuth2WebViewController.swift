@@ -22,10 +22,10 @@ class OAuth2WebViewController: UIViewController {
 
         var urlstring: String = "https://\(hostName)"
         urlstring += Mastodon.Constants.oauthAuthorizePath
-        urlstring += "?scope=" + Keys.MASTODON_SCOPE.urlEncoded()
-        urlstring += "&client_id=" + Keys.MASTODON_CLIENT_ID
+        urlstring += "?scope=" + Mastodon.shared.scope.urlEncoded()
+        urlstring += "&client_id=" + Mastodon.shared.clientId
         urlstring += "&response_type=code"
-        urlstring += "&redirect_uri=" + Keys.MASTODON_REDIRECT_URI
+        urlstring += "&redirect_uri=" + Mastodon.shared.redirectUri
 
         // Do any additional setup after loading the view.
         if let url = URL(string: urlstring) {

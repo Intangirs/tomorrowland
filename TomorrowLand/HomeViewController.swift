@@ -10,6 +10,7 @@ import UIKit
 import SafariServices
 
 class HomeViewController: UIViewController, MastodonLoginRequired {
+
     var timelineWorker: TimeLineWorker?
 
     @IBOutlet weak var tableView: UITableView!

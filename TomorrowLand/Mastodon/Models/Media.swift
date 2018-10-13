@@ -9,5 +9,6 @@
 import Foundation
 
 struct Media: Codable {
+    let url: String
     let preview_url: String
 }

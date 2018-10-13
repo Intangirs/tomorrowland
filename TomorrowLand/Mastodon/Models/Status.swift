@@ -15,6 +15,7 @@ class Status: Codable {
     let reblog: Status?
     let id: String
     let media_attachments: [Media]
+    let emojis: [Emoji]
 
 //    let id: String
 //    let in_reply_to_id: String?
@@ -32,6 +33,7 @@ class Status: Codable {
         case reblog
         case id
         case media_attachments
+        case emojis
     }
 
     required init(from decoder: Decoder) throws {
@@ -42,6 +44,7 @@ class Status: Codable {
         reblog = try values.decodeIfPresent(Status.self, forKey: .reblog)
         media_attachments = try values.decode([Media].self, forKey: .media_attachments)
         id = try values.decode(String.self, forKey: .id)
+        emojis = try values.decode([Emoji].self, forKey: .emojis)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -51,5 +54,6 @@ class Status: Codable {
         try container.encodeIfPresent(reblog, forKey: .reblog)
         try container.encode(media_attachments, forKey: .media_attachments)
         try container.encode(id, forKey: .id)
+        try container.encode(emojis, forKey: .emojis)
     }
 }

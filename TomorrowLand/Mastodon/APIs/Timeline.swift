@@ -12,7 +12,7 @@ import Alamofire
 extension Mastodon {
     class Timeline {
         enum TimelineType {
-            case home, `public`, hashtag
+            case home, local, federation, hashtag
         }
 
         var type: TimelineType
@@ -30,7 +30,10 @@ extension Mastodon {
             switch type {
             case .home:
                 endpoint += "\(Mastodon.Constants.timelinesHomePath)"
-            case .public:
+            case .local:
+                endpoint += "\(Mastodon.Constants.timelinesPublicPath)"
+                endpoint.append("?local=true")
+            case .federation:
                 endpoint += "\(Mastodon.Constants.timelinesPublicPath)"
             case .hashtag:
                 endpoint += "\(Mastodon.Constants.timelinesHashtagPath)"

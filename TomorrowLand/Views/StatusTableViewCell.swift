@@ -26,6 +26,7 @@ class StatusTableViewCell: UITableViewCell {
     @IBOutlet weak var previewImageHeight: NSLayoutConstraint!
     var handleURLTapped: ((URL) -> Void)?
     var handleHashtagTapped: ((String) -> Void)?
+    var handleUserNameTapped: ((Mention) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,7 @@ class StatusTableViewCell: UITableViewCell {
         contentLabel.text = ""
         contentLabel.attributedText = nil
         attatchmentView.image = nil
+        avatarImage.image = nil
     }
     
     public func configure(status: Status) {
@@ -117,6 +119,13 @@ class StatusTableViewCell: UITableViewCell {
     }
     
     fileprivate func configureContent(_ status: Status) {
+        
+        contentLabel.handleMentionTap { (mention) in
+            if let mention = status.mention(by: mention) {
+                self.handleUserNameTapped?(mention)
+            }
+        }
+
         let contentString = NSMutableAttributedString(string: status.content)
         
         let url = URL(string: status.account.avatar)!
@@ -169,6 +178,7 @@ class StatusTableViewCell: UITableViewCell {
         } else {
             previewImageHeight.constant = 0
         }
+
     }
     
 }

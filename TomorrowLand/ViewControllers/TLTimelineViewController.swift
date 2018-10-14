@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  TLTimelineViewController.swift
 //  TomorrowLand
 //
 //  Created by Yusuke Ohashi on 2018/09/25.
@@ -9,12 +9,12 @@
 import UIKit
 import SafariServices
 
-class HomeViewController: UIViewController, MastodonLoginRequired {
+class TLTimelineViewController: UIViewController, TLLoginRequired {
 
-    var timelineWorker: TimeLineWorker?
+    var timelineWorker: TLTimeLine?
 
     @IBOutlet weak var tableView: UITableView!
-    var timelineType: Mastodon.Timeline.TimelineType = .public
+    var timelineType: Mastodon.Timeline.TimelineType = .local
     var keyword: String = ""
     var hashtag: String = ""
     var listId: String = ""
@@ -23,8 +23,8 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = viewTitle(by: timelineType)
-        self.timelineWorker = TimeLineWorker(with: self.tableView)
+        self.title = TLUtils.viewTitle(by: timelineType)
+        self.timelineWorker = TLTimeLine(with: self.tableView)
         commonSetup(worker: self.timelineWorker!)
     }
 
@@ -40,8 +40,8 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
 
 // MARK: Helpers
 
-extension HomeViewController {
-    private func commonSetup(worker: TimeLineWorker) {
+extension TLTimelineViewController {
+    private func commonSetup(worker: TLTimeLine) {
         worker.handleURLTap = { url in
             let safari = SFSafariViewController(url: url)
             self.present(safari, animated: true, completion: nil)
@@ -54,32 +54,24 @@ extension HomeViewController {
         }
         
         worker.handleHashtagTap = { hashtag in
-            let hashtagTimeline = HomeViewController()
+            let hashtagTimeline = TLTimelineViewController()
             hashtagTimeline.timelineType = .hashtag
             hashtagTimeline.hashtag = hashtag
             let hashNav = UINavigationController(rootViewController: hashtagTimeline)
             self.present(hashNav, animated: true, completion: nil)
         }
         
+        worker.handleUserNameTap = { mention in
+            let profile = TLProfileViewController()
+            profile.accountId = mention.id
+            self.navigationController?.pushViewController(profile, animated: true)
+        }
+        
         if timelineType == .hashtag {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close".localized(), style: .plain, target: self, action: #selector(close))
         }
     }
-    
-    private func viewTitle(by timelineType: Mastodon.Timeline.TimelineType) -> String {
-        var viewTitle = ""
-        switch timelineType {
-        case .home:
-            viewTitle = "Home".localized()
-        case .hashtag:
-            viewTitle = "Hashtag".localized()
-        default:
-            viewTitle = "Public".localized()
-        }
         
-        return viewTitle
-    }
-    
     @objc func close() {
         dismiss(animated: true, completion: nil)
     }

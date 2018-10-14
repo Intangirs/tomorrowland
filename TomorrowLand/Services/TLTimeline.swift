@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimeLineWorker: NSObject {
+class TLTimeLine: NSObject {
     var statuses: [Status]
     var maxId: String
     var tableView: UITableView
@@ -19,12 +19,13 @@ class TimeLineWorker: NSObject {
     var handleURLTap: ((URL) -> Void)?
     var didCellSelected: ((UITableView, IndexPath, Status) -> Void)?
     var handleHashtagTap: ((String) -> Void)?
+    var handleUserNameTap: ((Mention) -> Void)?
     private let refreshControl = UIRefreshControl()
     
     public init(with tableView: UITableView) {
         self.statuses = []
         self.maxId = ""
-        self.timeline = Mastodon.Timeline(type: .public)
+        self.timeline = Mastodon.Timeline(type: .local)
         
         self.tableView = tableView
         super.init()
@@ -39,14 +40,14 @@ class TimeLineWorker: NSObject {
     }
     
     public func start(type: Mastodon.Timeline.TimelineType, hashtag: String, listId: String) {
-        if self.statuses.count == 0 || type == .public {
+        if self.statuses.count == 0 || type == .local || type == .federation {
             fetch(initially: true, timelineType: type, hashTag: hashtag, listId: listId)
         }
     }
     
 }
 
-extension TimeLineWorker: UITableViewDelegate, UITableViewDataSource {
+extension TLTimeLine: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -60,6 +61,7 @@ extension TimeLineWorker: UITableViewDelegate, UITableViewDataSource {
             cell.configure(status: self.statuses[indexPath.row])
             cell.handleURLTapped = handleURLTap
             cell.handleHashtagTapped = handleHashtagTap
+            cell.handleUserNameTapped = handleUserNameTap
             return cell
         }
         
@@ -95,7 +97,7 @@ extension TimeLineWorker: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension TimeLineWorker {
+extension TLTimeLine {
     private func fetch(initially: Bool,
                        timelineType: Mastodon.Timeline.TimelineType,
                        hashTag: String,
@@ -132,9 +134,15 @@ extension TimeLineWorker {
                                         self.refreshControl.endRefreshing()
                                     }
                                     
-                                    if self.statuses.count > 0, statuses.count > 0 {
+                                    if self.statuses.count > 0 {
                                         self.tableView.reloadData()
-                                        self.tableView.scrollToRow(at: IndexPath(row: self.statuses.count - statuses.count, section: 0), at: UITableViewScrollPosition.middle, animated: false)
+                                        if  statuses.count > 0 {
+                                            var position = self.statuses.count - statuses.count
+                                            if position > 0 {
+                                                position -= 1
+                                            }
+                                            self.tableView.scrollToRow(at: IndexPath(row: position, section: 0), at: UITableViewScrollPosition.top, animated: false)
+                                        }
                                     }
                                 }
         })

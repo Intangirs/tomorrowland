@@ -16,7 +16,8 @@ class Status: Codable {
     let id: String
     let media_attachments: [Media]
     let emojis: [Emoji]
-
+    let mentions: [Mention]
+    
 //    let id: String
 //    let in_reply_to_id: String?
 //    let in_reply_to_account_id: String?
@@ -34,6 +35,7 @@ class Status: Codable {
         case id
         case media_attachments
         case emojis
+        case mentions
     }
 
     required init(from decoder: Decoder) throws {
@@ -45,6 +47,7 @@ class Status: Codable {
         media_attachments = try values.decode([Media].self, forKey: .media_attachments)
         id = try values.decode(String.self, forKey: .id)
         emojis = try values.decode([Emoji].self, forKey: .emojis)
+        mentions = try values.decode([Mention].self, forKey: .mentions)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -55,5 +58,12 @@ class Status: Codable {
         try container.encode(media_attachments, forKey: .media_attachments)
         try container.encode(id, forKey: .id)
         try container.encode(emojis, forKey: .emojis)
+        try container.encode(mentions, forKey: .mentions)
+    }
+    
+    func mention(by username: String) -> Mention? {
+        return mentions.filter { (mention) -> Bool in
+            mention.username == username
+        }.first
     }
 }

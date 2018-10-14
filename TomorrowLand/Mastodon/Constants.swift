@@ -20,5 +20,6 @@ extension Mastodon {
         static let statusesContextPath = "/api/v1/statuses/:id/context"
         static let statusesCardPath = "/api/v1/statuses/:id/card"
         static let customEmojiPath = "/api/v1/custom_emojis"
+        static let accountsPath = "/api/v1/accounts/:id"
     }
 }

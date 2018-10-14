@@ -13,10 +13,6 @@ extension String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
     }
 
-    func localized() -> String {
-        return NSLocalizedString(self, comment: "")
-    }
-
     func stripHTML() -> (String, [String: String]) {
         var result: String = ""
         var hyperLinks: [String: String] = [:]

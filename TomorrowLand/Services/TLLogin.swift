@@ -6,13 +6,13 @@
 //  Copyright © 2018 Yusuke Ohashi. All rights reserved.
 //
 
-import KeychainSwift
+import UIKit
 
-protocol MastodonLoginRequired {
+protocol TLLoginRequired {
     func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void)
 }
 
-extension MastodonLoginRequired where Self: UIViewController {
+extension TLLoginRequired where Self: UIViewController {
 
     func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {        
         guard shouldAuthenticate else {
@@ -29,7 +29,7 @@ extension MastodonLoginRequired where Self: UIViewController {
                     return
                 }
 
-                MastodonUtils.addAccount(host: host, token: token)
+                TLUtils.addAccount(host: host, token: token)
                 done(true)
             }
         }

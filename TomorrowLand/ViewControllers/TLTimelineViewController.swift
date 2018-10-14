@@ -9,9 +9,9 @@
 import UIKit
 import SafariServices
 
-class HomeViewController: UIViewController, MastodonLoginRequired {
+class TLTimelineViewController: UIViewController, TLLoginRequired {
 
-    var timelineWorker: TimeLineWorker?
+    var timelineWorker: TLTimeline?
 
     @IBOutlet weak var tableView: UITableView!
     var timelineType: Mastodon.Timeline.TimelineType = .public
@@ -24,7 +24,7 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
         super.viewDidLoad()
 
         self.title = viewTitle(by: timelineType)
-        self.timelineWorker = TimeLineWorker(with: self.tableView)
+        self.timelineWorker = TLTimeline(with: self.tableView)
         commonSetup(worker: self.timelineWorker!)
     }
 
@@ -40,8 +40,8 @@ class HomeViewController: UIViewController, MastodonLoginRequired {
 
 // MARK: Helpers
 
-extension HomeViewController {
-    private func commonSetup(worker: TimeLineWorker) {
+extension TLTimelineViewController {
+    private func commonSetup(worker: TLTimeline) {
         worker.handleURLTap = { url in
             let safari = SFSafariViewController(url: url)
             self.present(safari, animated: true, completion: nil)
@@ -54,7 +54,7 @@ extension HomeViewController {
         }
         
         worker.handleHashtagTap = { hashtag in
-            let hashtagTimeline = HomeViewController()
+            let hashtagTimeline = TLTimelineViewController()
             hashtagTimeline.timelineType = .hashtag
             hashtagTimeline.hashtag = hashtag
             let hashNav = UINavigationController(rootViewController: hashtagTimeline)

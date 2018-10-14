@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimeLineWorker: NSObject {
+class TLTimeline: NSObject {
     var statuses: [Status]
     var maxId: String
     var tableView: UITableView
@@ -46,7 +46,7 @@ class TimeLineWorker: NSObject {
     
 }
 
-extension TimeLineWorker: UITableViewDelegate, UITableViewDataSource {
+extension TLTimeline: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -95,7 +95,7 @@ extension TimeLineWorker: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension TimeLineWorker {
+extension TLTimeline {
     private func fetch(initially: Bool,
                        timelineType: Mastodon.Timeline.TimelineType,
                        hashTag: String,

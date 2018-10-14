@@ -9,13 +9,6 @@
 import Foundation
 
 extension String {
-    func urlEncoded() -> String {
-        return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""
-    }
-
-    func localized() -> String {
-        return NSLocalizedString(self, comment: "")
-    }
 
     func stripHTML() -> (String, [String: String]) {
         var result: String = ""

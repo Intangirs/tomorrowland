@@ -1,15 +1,15 @@
 //
-//  MastodonUtils.swift
+//  TLUtils.swift
 //  TomorrowLand
 //
 //  Created by Yusuke Ohashi on 2018/10/12.
 //  Copyright © 2018 Yusuke Ohashi. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import KeychainSwift
 
-class MastodonUtils {
+class TLUtils {
 
     static var currentHost: String {
         var mastodon_host = "mastodon.social"
@@ -53,4 +53,20 @@ class MastodonUtils {
         return switchHost(for: host)
     }
     
+    static func configureTabBarController() -> UITabBarController {
+        let tabBarViewController = UITabBarController()
+        
+        let homeViewController = TLTimelineViewController()
+        homeViewController.timelineType = .home
+        
+        let publicViewController = TLTimelineViewController()
+        
+        let homeNav = UINavigationController(rootViewController: homeViewController)
+        homeNav.tabBarItem = UITabBarItem(title: "Home".localized(), image: nil, tag: 0)
+        let publicNav = UINavigationController(rootViewController: publicViewController)
+        publicNav.tabBarItem = UITabBarItem(title: "Public".localized(), image: nil, tag: 1)
+        
+        tabBarViewController.viewControllers = [homeNav, publicNav]
+        return tabBarViewController
+    }
 }

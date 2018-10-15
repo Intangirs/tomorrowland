@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4DB500B75198FC906A437B /* Pods_TomorrowLandTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC8437A02CE65559F7EA319 /* Pods_TomorrowLandTests.framework */; };
 		58187F86215A3B9300CA842A /* TLTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F84215A3B9300CA842A /* TLTimelineViewController.swift */; };
 		58187F89215A41D200CA842A /* Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F88215A41D200CA842A /* Mastodon.swift */; };
 		58187F8B215A42D900CA842A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8A215A42D900CA842A /* Token.swift */; };
@@ -28,10 +29,7 @@
 		58ABFB3F2126BA8200137583 /* TomorrowLandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB3E2126BA8200137583 /* TomorrowLandTests.swift */; };
 		58ABFB4A2126BA8300137583 /* TomorrowLandUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB492126BA8300137583 /* TomorrowLandUITests.swift */; };
 		58ABFB592126C07800137583 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58ABFB582126C07800137583 /* WebKit.framework */; };
-		58C710E82170DCF5006E7E75 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C710E72170DCF5006E7E75 /* AlamofireImage.framework */; };
 		58D994B72164602200AD4230 /* Statuses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D994B62164602200AD4230 /* Statuses.swift */; };
-		7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7000403E2159434000FB782F /* KeychainSwift.framework */; };
-		700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 700AB5E82157837E005C5150 /* Alamofire.framework */; };
 		700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+Mastodon.swift */; };
 		7037796A2157707700064392 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779682157707700064392 /* AuthenticationViewController.swift */; };
 		7037796C215770FE00064392 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703779692157707700064392 /* AuthenticationViewController.xib */; };
@@ -39,8 +37,10 @@
 		70377970215771BE00064392 /* OAuth2WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7037796E215771BE00064392 /* OAuth2WebViewController.xib */; };
 		703779722157750D00064392 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779712157750D00064392 /* Keys.swift */; };
 		7037797621577F6A00064392 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* Constants.swift */; };
-		704F54252160E8D10068BA88 /* ActiveLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704F54242160E8D10068BA88 /* ActiveLabel.framework */; };
 		704FC2EE2173281900D6F9E4 /* TLTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58187F85215A3B9300CA842A /* TLTimelineViewController.xib */; };
+		704FC2F021733AED00D6F9E4 /* UIImage+TL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FC2EF21733AED00D6F9E4 /* UIImage+TL.swift */; };
+		704FC2F221733F4000D6F9E4 /* UIImageView+TL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FC2F121733F4000D6F9E4 /* UIImageView+TL.swift */; };
+		704FC2F421733FE300D6F9E4 /* TLDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FC2F321733FE300D6F9E4 /* TLDataStore.swift */; };
 		708D7116216FAE0E001C463F /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D7115216FAE0E001C463F /* Headers.swift */; };
 		708D7118216FC2D4001C463F /* CustomEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D7117216FC2D4001C463F /* CustomEmoji.swift */; };
 		709228C5216101CA004912CB /* TLTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709228C4216101CA004912CB /* TLTimeline.swift */; };
@@ -52,6 +52,8 @@
 		70EA699021730A130073016F /* AccountAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EA698F21730A130073016F /* AccountAPI.swift */; };
 		70EA6996217321920073016F /* TLProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70EA6994217321920073016F /* TLProfileViewController.xib */; };
 		70EA6997217321920073016F /* TLProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EA6995217321920073016F /* TLProfileViewController.swift */; };
+		83B793313B8326D8199289CA /* Pods_TomorrowLandUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7480BF62FB84E88208B15A80 /* Pods_TomorrowLandUITests.framework */; };
+		B6696093FE1EC80C374DA90E /* Pods_TomorrowLand.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09798DC5C21E352CCAF3F75A /* Pods_TomorrowLand.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0595D90FC7109E29CD159D1A /* Pods-TomorrowLandUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLandUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLandUITests/Pods-TomorrowLandUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		09798DC5C21E352CCAF3F75A /* Pods_TomorrowLand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TomorrowLand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C4CF83988D4D6502000C1EF /* Pods-TomorrowLandTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLandTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLandTests/Pods-TomorrowLandTests.release.xcconfig"; sourceTree = "<group>"; };
+		17C4A3B7B370E37796F6C20C /* Pods-TomorrowLand.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLand.release.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLand/Pods-TomorrowLand.release.xcconfig"; sourceTree = "<group>"; };
+		1EC8437A02CE65559F7EA319 /* Pods_TomorrowLandTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TomorrowLandTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58187F84215A3B9300CA842A /* TLTimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTimelineViewController.swift; sourceTree = "<group>"; };
 		58187F85215A3B9300CA842A /* TLTimelineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLTimelineViewController.xib; sourceTree = "<group>"; };
 		58187F88215A41D200CA842A /* Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastodon.swift; sourceTree = "<group>"; };
@@ -103,6 +110,8 @@
 		58ABFB582126C07800137583 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		58C710E72170DCF5006E7E75 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		58D994B62164602200AD4230 /* Statuses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statuses.swift; sourceTree = "<group>"; };
+		5DABA49D6E6723BE7E906C72 /* Pods-TomorrowLandUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLandUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLandUITests/Pods-TomorrowLandUITests.release.xcconfig"; sourceTree = "<group>"; };
+		678C386F1AEF1465EAA1216D /* Pods-TomorrowLandTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLandTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLandTests/Pods-TomorrowLandTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7000403E2159434000FB782F /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
 		700AB5E82157837E005C5150 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		700AB5EA21578918005C5150 /* String+Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Mastodon.swift"; sourceTree = "<group>"; };
@@ -114,6 +123,9 @@
 		703779732157751D00064392 /* Keys.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.sample.swift; sourceTree = "<group>"; };
 		7037797521577F6A00064392 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		704F54242160E8D10068BA88 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
+		704FC2EF21733AED00D6F9E4 /* UIImage+TL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TL.swift"; sourceTree = "<group>"; };
+		704FC2F121733F4000D6F9E4 /* UIImageView+TL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+TL.swift"; sourceTree = "<group>"; };
+		704FC2F321733FE300D6F9E4 /* TLDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLDataStore.swift; sourceTree = "<group>"; };
 		708D7115216FAE0E001C463F /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		708D7117216FC2D4001C463F /* CustomEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmoji.swift; sourceTree = "<group>"; };
 		709228C4216101CA004912CB /* TLTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTimeline.swift; sourceTree = "<group>"; };
@@ -128,6 +140,8 @@
 		70EA698F21730A130073016F /* AccountAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPI.swift; sourceTree = "<group>"; };
 		70EA6994217321920073016F /* TLProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLProfileViewController.xib; sourceTree = "<group>"; };
 		70EA6995217321920073016F /* TLProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLProfileViewController.swift; sourceTree = "<group>"; };
+		7480BF62FB84E88208B15A80 /* Pods_TomorrowLandUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TomorrowLandUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F2D8CBF8F22FA13F98A866 /* Pods-TomorrowLand.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLand.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLand/Pods-TomorrowLand.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,11 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58C710E82170DCF5006E7E75 /* AlamofireImage.framework in Frameworks */,
-				704F54252160E8D10068BA88 /* ActiveLabel.framework in Frameworks */,
-				7000403F2159434000FB782F /* KeychainSwift.framework in Frameworks */,
 				58ABFB592126C07800137583 /* WebKit.framework in Frameworks */,
-				700AB5E92157837E005C5150 /* Alamofire.framework in Frameworks */,
+				B6696093FE1EC80C374DA90E /* Pods_TomorrowLand.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4DB500B75198FC906A437B /* Pods_TomorrowLandTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B793313B8326D8199289CA /* Pods_TomorrowLandUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +233,7 @@
 				58ABFB272126BA8100137583 /* Products */,
 				58ABFB572126C07800137583 /* Frameworks */,
 				70EA6992217320400073016F /* Recovered References */,
+				E759B5E6E995D69983029C0D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -278,6 +292,9 @@
 				7000403E2159434000FB782F /* KeychainSwift.framework */,
 				700AB5E82157837E005C5150 /* Alamofire.framework */,
 				58ABFB582126C07800137583 /* WebKit.framework */,
+				09798DC5C21E352CCAF3F75A /* Pods_TomorrowLand.framework */,
+				1EC8437A02CE65559F7EA319 /* Pods_TomorrowLandTests.framework */,
+				7480BF62FB84E88208B15A80 /* Pods_TomorrowLandUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -289,6 +306,9 @@
 				709228C4216101CA004912CB /* TLTimeline.swift */,
 				58799037217036EE008BB880 /* TLUtils.swift */,
 				70EA69802172FBFB0073016F /* String+TL.swift */,
+				704FC2EF21733AED00D6F9E4 /* UIImage+TL.swift */,
+				704FC2F121733F4000D6F9E4 /* UIImageView+TL.swift */,
+				704FC2F321733FE300D6F9E4 /* TLDataStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -333,6 +353,19 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		E759B5E6E995D69983029C0D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77F2D8CBF8F22FA13F98A866 /* Pods-TomorrowLand.debug.xcconfig */,
+				17C4A3B7B370E37796F6C20C /* Pods-TomorrowLand.release.xcconfig */,
+				678C386F1AEF1465EAA1216D /* Pods-TomorrowLandTests.debug.xcconfig */,
+				0C4CF83988D4D6502000C1EF /* Pods-TomorrowLandTests.release.xcconfig */,
+				0595D90FC7109E29CD159D1A /* Pods-TomorrowLandUITests.debug.xcconfig */,
+				5DABA49D6E6723BE7E906C72 /* Pods-TomorrowLandUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,10 +373,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58ABFB4E2126BA8300137583 /* Build configuration list for PBXNativeTarget "TomorrowLand" */;
 			buildPhases = (
+				00BF9AB1A9561DB0E139F92D /* [CP] Check Pods Manifest.lock */,
 				58ABFB222126BA8100137583 /* Sources */,
 				58ABFB232126BA8100137583 /* Frameworks */,
 				58ABFB242126BA8100137583 /* Resources */,
-				703779772157828700064392 /* ShellScript */,
+				D6900E4BDD02BD3425659655 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,6 +392,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58ABFB512126BA8300137583 /* Build configuration list for PBXNativeTarget "TomorrowLandTests" */;
 			buildPhases = (
+				A45A7DF2B997CB037B8917D3 /* [CP] Check Pods Manifest.lock */,
 				58ABFB362126BA8200137583 /* Sources */,
 				58ABFB372126BA8200137583 /* Frameworks */,
 				58ABFB382126BA8200137583 /* Resources */,
@@ -376,6 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58ABFB542126BA8300137583 /* Build configuration list for PBXNativeTarget "TomorrowLandUITests" */;
 			buildPhases = (
+				4B5B94889BA4B84EE9C1322B /* [CP] Check Pods Manifest.lock */,
 				58ABFB412126BA8300137583 /* Sources */,
 				58ABFB422126BA8300137583 /* Frameworks */,
 				58ABFB432126BA8300137583 /* Resources */,
@@ -467,31 +503,99 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		703779772157828700064392 /* ShellScript */ = {
+		00BF9AB1A9561DB0E139F92D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"",
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/KeychainSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ActiveLabel.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/KeychainSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ActiveLabel.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AlamofireImage.framework",
+				"$(DERIVED_FILE_DIR)/Pods-TomorrowLand-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B5B94889BA4B84EE9C1322B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TomorrowLandUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A45A7DF2B997CB037B8917D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TomorrowLandTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6900E4BDD02BD3425659655 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TomorrowLand/Pods-TomorrowLand-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActiveLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TomorrowLand/Pods-TomorrowLand-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -512,15 +616,18 @@
 				70EA6997217321920073016F /* TLProfileViewController.swift in Sources */,
 				58D994B72164602200AD4230 /* Statuses.swift in Sources */,
 				703779722157750D00064392 /* Keys.swift in Sources */,
+				704FC2F421733FE300D6F9E4 /* TLDataStore.swift in Sources */,
 				58187F8F215A4A3D00CA842A /* Timeline.swift in Sources */,
 				70EA698A217304C30073016F /* Mention.swift in Sources */,
 				58187F86215A3B9300CA842A /* TLTimelineViewController.swift in Sources */,
 				70EA69812172FBFB0073016F /* String+TL.swift in Sources */,
 				7037796F215771BE00064392 /* OAuth2WebViewController.swift in Sources */,
 				58187F89215A41D200CA842A /* Mastodon.swift in Sources */,
+				704FC2F021733AED00D6F9E4 /* UIImage+TL.swift in Sources */,
 				5880FD7B215C9AE500DE273C /* StatusTableViewCell.swift in Sources */,
 				5880FD71215C733D00DE273C /* Status.swift in Sources */,
 				587990362170329E008BB880 /* Emoji.swift in Sources */,
+				704FC2F221733F4000D6F9E4 /* UIImageView+TL.swift in Sources */,
 				70A2FCB2216119E3004BF824 /* Media.swift in Sources */,
 				5880FD7E215CF4F300DE273C /* Document.swift in Sources */,
 				5880FD80215CFF8500DE273C /* Entity.swift in Sources */,
@@ -703,6 +810,7 @@
 		};
 		58ABFB4F2126BA8300137583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77F2D8CBF8F22FA13F98A866 /* Pods-TomorrowLand.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -726,6 +834,7 @@
 		};
 		58ABFB502126BA8300137583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17C4A3B7B370E37796F6C20C /* Pods-TomorrowLand.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -750,6 +859,7 @@
 		};
 		58ABFB522126BA8300137583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 678C386F1AEF1465EAA1216D /* Pods-TomorrowLandTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -771,6 +881,7 @@
 		};
 		58ABFB532126BA8300137583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C4CF83988D4D6502000C1EF /* Pods-TomorrowLandTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -792,6 +903,7 @@
 		};
 		58ABFB552126BA8300137583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0595D90FC7109E29CD159D1A /* Pods-TomorrowLandUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -812,6 +924,7 @@
 		};
 		58ABFB562126BA8300137583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DABA49D6E6723BE7E906C72 /* Pods-TomorrowLandUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

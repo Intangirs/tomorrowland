@@ -1,0 +1,6 @@
+framework module Pods_TomorrowLandTests {
+  umbrella header "Pods-TomorrowLandTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

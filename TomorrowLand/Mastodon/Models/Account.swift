@@ -14,5 +14,8 @@ class Account: Codable {
     let acct: String
     let display_name: String
     let avatar: String
+    let avatar_static: String
+    let header: String
+    let header_static: String
     let emojis: [Emoji]
 }

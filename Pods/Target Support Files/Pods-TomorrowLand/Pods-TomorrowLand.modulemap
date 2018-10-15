@@ -1,0 +1,6 @@
+framework module Pods_TomorrowLand {
+  umbrella header "Pods-TomorrowLand-umbrella.h"
+
+  export *
+  module * { export * }
+}

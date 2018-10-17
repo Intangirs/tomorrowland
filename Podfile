@@ -7,9 +7,11 @@ target 'TomorrowLand' do
 
   # Pods for TomorrowLand
   pod "Alamofire", "~> 4.7"
-  pod 'KeychainSwift', '~> 12.0.0'
+  pod "KeychainSwift", "~> 12.0.0"
   pod "ActiveLabel"
   pod "Kingfisher", "~> 4.0"
+  pod "Kiri", :git => "https://github.com/junkpiano/Kiri.git", :branch => 'master'
+  pod 'Moya', '~> 11.0'
 
   target 'TomorrowLandTests' do
     inherit! :search_paths

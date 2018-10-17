@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kiri
 
 class Mastodon {
     static let shared = Mastodon()
@@ -44,4 +45,24 @@ class Mastodon {
         viewController.present(auth, animated: true, completion: nil)
     }
 
+    static func fetchTimeline(type: MastodonAPI.TimelineType, hashTag: String, listId: String, maxId: String, completion: @escaping ([Status]?, Headers?, Error?) -> Void) {
+        Kiri<API>(request: .timeline(type, hashTag, listId, maxId)).send { (response, error) in
+            
+            var maxId: String?
+            var headers: Headers?
+            
+            if let response = response?.response {
+                headers = Headers(with: response.allHeaderFields)
+                maxId = headers?.maxId
+            }
+            
+            do {
+                let result: [Status]? = try response?.decodeJSON()
+                completion(result, headers, error)
+            } catch {
+                completion(nil, headers, error)
+            }
+            
+        }
+    }
 }

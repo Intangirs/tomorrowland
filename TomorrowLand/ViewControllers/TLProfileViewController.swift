@@ -7,33 +7,27 @@
 //
 
 import UIKit
+import Kiri
 
 class TLProfileViewController: UIViewController {
 
     var accountId: String = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let api = AccountAPI(accountId: accountId)
-        Session<AccountAPI>(request: api).send { (account, error) in
-            if let account = account {
-                debugPrint(account)
+        Kiri<API>(request: .account(accountId)).send { (response, error) in
+            if let response = response {
+                do {
+                    let account: Account = try response.decodeJSON()
+                    print(account)
+                } catch {
+                    print(error)
+                }
             } else {
-                debugPrint(error)
+                debugPrint(error ?? "No Error")
             }
         }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

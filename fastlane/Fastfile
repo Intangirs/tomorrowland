@@ -18,14 +18,16 @@ default_platform(:ios)
 platform :ios do
   desc "Description of what the lane does"
   lane :build do
-  	carthage(
-  		platform: "iOS"
-  		)
+    cocoapods
   	match(
-  		type: "development"
+  		type: "appstore"
   		)
+    gym
   end
 
+  desc "Upload build to TestFlight"
   lane :beta do
+    build
+    pilot
   end
 end

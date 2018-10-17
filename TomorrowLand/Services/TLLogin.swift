@@ -14,12 +14,12 @@ protocol TLLoginRequired {
 
 extension TLLoginRequired where Self: UIViewController {
 
-    func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {        
+    func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {
         guard shouldAuthenticate else {
             done(true)
             return
         }
-        
+
         if Mastodon.shared.token.count > 0 {
             done(true)
         } else {

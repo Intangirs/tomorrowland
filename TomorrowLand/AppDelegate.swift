@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                       secretId: Keys.MASTODON_CLIENT_SECRET,
                       scope: Keys.MASTODON_SCOPE,
                       redirectUri: Keys.MASTODON_REDIRECT_URI)
-        
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TLUtils.configureTabBarController()
         window?.makeKeyAndVisible()

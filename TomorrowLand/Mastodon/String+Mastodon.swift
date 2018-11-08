@@ -73,7 +73,7 @@ extension String {
         result = result.replacingOccurrences(of: "&amp;", with: "&")
         result = result.replacingOccurrences(of: "&gt;", with: ">")
         result = result.replacingOccurrences(of: "&lt;", with: "<")
-        
+
         return (result, hyperLinks)
     }
 }

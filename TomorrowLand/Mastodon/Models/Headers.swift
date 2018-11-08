@@ -11,7 +11,7 @@ import Foundation
 class Headers {
     var maxId: String
     var minId: String
-    
+
     init(with data: [AnyHashable: Any]) {
         if let link = data["Link"] as? String {
             let result = Headers.extractMaxMinId(link: link)
@@ -29,7 +29,7 @@ extension Headers {
         let elements = link.replacingOccurrences(of: "<", with: "").replacingOccurrences(of: ">", with: "").split(separator: ",")
         var maxId = ""
         var sinceId = ""
-        
+
         elements.forEach { (element) in
             let link = element.split(separator: ";")[0].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
             let rel = element.split(separator: ";")[1].trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
@@ -43,7 +43,7 @@ extension Headers {
                     })
                 }
             }
-            
+
             if rel.contains("prev"), let url = URL(string: link) {
                 if let query = url.query {
                     query.split(separator: "&").forEach({ (param) in
@@ -55,7 +55,7 @@ extension Headers {
                 }
             }
         }
-        
+
         return (maxId, sinceId)
     }
 }

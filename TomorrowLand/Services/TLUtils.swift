@@ -10,6 +10,13 @@ import Foundation
 import KeychainSwift
 
 class TLUtils {
+    enum ViewType {
+        case home
+        case hashtag
+        case local
+        case federation
+        case toot
+    }
 
     static var currentHost: String {
         var mastodon_host = "mastodon.social"
@@ -18,11 +25,11 @@ class TLUtils {
         }
         return mastodon_host
     }
-    
+
     static var currentToken: String {
         return KeychainSwift(keyPrefix: "TL").get(currentHost) ?? ""
     }
-    
+
     @discardableResult
     static func switchHost(for host: String) -> Bool {
         if let hosts = KeychainSwift(keyPrefix: "TL").get("hosts"),
@@ -38,10 +45,10 @@ class TLUtils {
             Mastodon.shared.token = currentToken
             return true
         }
-        
+
         return false
     }
-    
+
     @discardableResult
     static func addAccount(host: String, token: String) -> Bool {
         if let hosts = KeychainSwift(keyPrefix: "TL").get("hosts"), !hosts.contains(host) {
@@ -52,29 +59,32 @@ class TLUtils {
         KeychainSwift(keyPrefix: "TL").set(token, forKey: host)
         return switchHost(for: host)
     }
-    
+
     static func configureTabBarController() -> UITabBarController {
         let tabBarViewController = UITabBarController()
-        
+
         let homeViewController = TLTimelineViewController()
         homeViewController.timelineType = .home
         let localViewController = TLTimelineViewController()
         localViewController.timelineType = .local
         let federatedViewController = TLTimelineViewController()
         federatedViewController.timelineType = .federation
-        
-        let homeNav = UINavigationController(rootViewController: homeViewController)
-        homeNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .home), image: nil, tag: Mastodon.Timeline.TimelineType.home.hashValue)
-        let localNav = UINavigationController(rootViewController: localViewController)
-        localNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .local), image: nil, tag: Mastodon.Timeline.TimelineType.local.hashValue)
-        let federatedNav = UINavigationController(rootViewController: federatedViewController)
-        federatedNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .federation), image: nil, tag: Mastodon.Timeline.TimelineType.federation.hashValue)
+        let tootViewController = TLTootViewController()
 
-        tabBarViewController.viewControllers = [homeNav, localNav, federatedNav]
+        let homeNav = UINavigationController(rootViewController: homeViewController)
+        homeNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .home), image: nil, tag: MastodonAPI.TimelineType.home.hashValue)
+        let localNav = UINavigationController(rootViewController: localViewController)
+        localNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .local), image: nil, tag: MastodonAPI.TimelineType.local.hashValue)
+        let federatedNav = UINavigationController(rootViewController: federatedViewController)
+        federatedNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .federation), image: nil, tag: MastodonAPI.TimelineType.federation.hashValue)
+        let tootNav = UINavigationController(rootViewController: tootViewController)
+        tootNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .toot), image: nil, tag: 599)
+
+        tabBarViewController.viewControllers = [homeNav, localNav, federatedNav, tootNav]
         return tabBarViewController
     }
-    
-    static func viewTitle(by timelineType: Mastodon.Timeline.TimelineType) -> String {
+
+    static func viewTitle(by timelineType: ViewType) -> String {
         var viewTitle = ""
         switch timelineType {
         case .home:
@@ -83,10 +93,12 @@ class TLUtils {
             viewTitle = "Hashtag".localized()
         case .federation:
             viewTitle = "Federation".localized()
+        case .toot:
+            viewTitle = "Toot".localized()
         default:
             viewTitle = "Local".localized()
         }
-        
+
         return viewTitle
     }
 

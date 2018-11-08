@@ -17,7 +17,7 @@ class Status: Codable {
     let media_attachments: [Media]
     let emojis: [Emoji]
     let mentions: [Mention]
-    
+
 //    let id: String
 //    let in_reply_to_id: String?
 //    let in_reply_to_account_id: String?
@@ -60,7 +60,7 @@ class Status: Codable {
         try container.encode(emojis, forKey: .emojis)
         try container.encode(mentions, forKey: .mentions)
     }
-    
+
     func mention(by username: String) -> Mention? {
         return mentions.filter { (mention) -> Bool in
             mention.username == username

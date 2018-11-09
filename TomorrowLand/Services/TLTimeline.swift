@@ -16,7 +16,7 @@ class TLTimeLine: NSObject {
     var listId: String = ""
     var tableView: UITableView
     var isLoadingMore: Bool = false
-    var shouldLoadMore: Bool = false
+    var shouldLoadMore: Bool = true
 
     var handleURLTap: ((URL) -> Void)?
     var didCellSelected: ((UITableView, IndexPath, Status) -> Void)?
@@ -44,9 +44,8 @@ class TLTimeLine: NSObject {
         self.timelineType = type
         self.hashTag = hashtag
         self.listId = listId
-        if self.statuses.count == 0 {
-            fetch(initially: true)
-        }
+        self.statuses = []
+        fetch()
     }
 
 }
@@ -91,19 +90,15 @@ extension TLTimeLine: UITableViewDelegate, UITableViewDataSource {
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if shouldLoadMore, self.isLoadingMore == false {
-            self.fetch(initially: false)
+        if (self.maxId == "" || shouldLoadMore), self.isLoadingMore == false {
+            self.fetch()
             shouldLoadMore = false
         }
     }
 }
 
 extension TLTimeLine {
-    private func fetch(initially: Bool) {
-        if initially {
-            self.maxId = ""
-        }
-
+    private func fetch() {
         self.isLoadingMore = true
 
         Mastodon.fetchTimeline(type: self.timelineType, hashTag: self.hashTag, listId: self.listId, maxId: self.maxId) { (result, headers, error) in
@@ -113,7 +108,7 @@ extension TLTimeLine {
             }
             
             let nonOptionalResult = result ?? []
-            if initially {
+            if self.statuses.count == 0 {
                 self.statuses = nonOptionalResult
             } else {
                 self.statuses.append(contentsOf: nonOptionalResult)
@@ -123,22 +118,21 @@ extension TLTimeLine {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
                 }
+
+                var startIndex = self.statuses.count - nonOptionalResult.count
+                var indexes = [IndexPath]()
+                nonOptionalResult.forEach({ (_) in
+                    indexes.append(IndexPath(row: startIndex, section: 0))
+                    startIndex += 1
+                })
                 
-                if self.statuses.count > 0 {
-                    self.tableView.reloadData()
-                    if  nonOptionalResult.count > 0 {
-                        var position = self.statuses.count - nonOptionalResult.count
-                        if position > 0 {
-                            position -= 1
-                        }
-                        self.tableView.scrollToRow(at: IndexPath(row: position, section: 0), at: UITableViewScrollPosition.top, animated: false)
-                    }
-                }
+                self.tableView.reloadData()
             }
         }
     }
 
     @objc func refreshTimeline() {
-        fetch(initially: true)
+        self.maxId = ""
+        shouldLoadMore = true
     }
 }

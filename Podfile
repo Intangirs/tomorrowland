@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'TomorrowLand' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -24,3 +24,12 @@ target 'TomorrowLand' do
   end
 
 end
+
+plugin 'cocoapods-keys', {
+  :project => "TomorrowLand",
+  :keys => [
+      'MASTODON_CLIENT_ID',
+      'MASTODON_CLIENT_SECRET',
+      'MASTODON_REDIRECT_URI',
+      'MASTODON_SCOPE'
+  ]}

@@ -8,6 +8,7 @@
 
 import UIKit
 import KeychainSwift
+import Keys
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,13 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let keys = TomorrowLandKeys()
         // Override point for customization after application launch.
         Mastodon.load(hostname: TLUtils.currentHost,
                       token: TLUtils.currentToken,
-                      clientId: Keys.MASTODON_CLIENT_ID,
-                      secretId: Keys.MASTODON_CLIENT_SECRET,
-                      scope: Keys.MASTODON_SCOPE,
-                      redirectUri: Keys.MASTODON_REDIRECT_URI)
+                      clientId: keys.mASTODON_CLIENT_ID,
+                      secretId: keys.mASTODON_CLIENT_SECRET,
+                      scope: keys.mASTODON_SCOPE,
+                      redirectUri: keys.mASTODON_REDIRECT_URI)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = TLUtils.configureTabBarController()

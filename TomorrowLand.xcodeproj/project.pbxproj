@@ -38,7 +38,6 @@
 		58C710EB21757611006E7E75 /* TLTootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C710E921757611006E7E75 /* TLTootViewController.swift */; };
 		58C710EC21757611006E7E75 /* TLTootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C710EA21757611006E7E75 /* TLTootViewController.xib */; };
 		700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+Mastodon.swift */; };
-		703779722157750D00064392 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703779712157750D00064392 /* Keys.swift */; };
 		7037797621577F6A00064392 /* MastodonAPI+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* MastodonAPI+Path.swift */; };
 		704FC2EE2173281900D6F9E4 /* TLTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58187F85215A3B9300CA842A /* TLTimelineViewController.xib */; };
 		704FC2F421733FE300D6F9E4 /* TLDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FC2F321733FE300D6F9E4 /* TLDataStore.swift */; };
@@ -119,8 +118,6 @@
 		7000403E2159434000FB782F /* KeychainSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainSwift.framework; path = Carthage/Build/iOS/KeychainSwift.framework; sourceTree = "<group>"; };
 		700AB5E82157837E005C5150 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		700AB5EA21578918005C5150 /* String+Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Mastodon.swift"; sourceTree = "<group>"; };
-		703779712157750D00064392 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
-		703779732157751D00064392 /* Keys.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.sample.swift; sourceTree = "<group>"; };
 		7037797521577F6A00064392 /* MastodonAPI+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonAPI+Path.swift"; sourceTree = "<group>"; };
 		704F54242160E8D10068BA88 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
 		704FC2F321733FE300D6F9E4 /* TLDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLDataStore.swift; sourceTree = "<group>"; };
@@ -256,8 +253,6 @@
 				58187F82215A396100CA842A /* Mastodon */,
 				5880FD78215C9ABB00DE273C /* Views */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
-				703779712157750D00064392 /* Keys.swift */,
-				703779732157751D00064392 /* Keys.sample.swift */,
 				58ABFB302126BA8200137583 /* Assets.xcassets */,
 				58ABFB322126BA8200137583 /* LaunchScreen.storyboard */,
 				58ABFB352126BA8200137583 /* Info.plist */,
@@ -565,6 +560,7 @@
 				"${BUILT_PRODUCTS_DIR}/ActiveLabel/ActiveLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kiri/Kiri.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -577,6 +573,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActiveLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kiri.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -603,7 +600,6 @@
 				709228C5216101CA004912CB /* TLTimeline.swift in Sources */,
 				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
 				70EA6997217321920073016F /* TLProfileViewController.swift in Sources */,
-				703779722157750D00064392 /* Keys.swift in Sources */,
 				58C710EB21757611006E7E75 /* TLTootViewController.swift in Sources */,
 				704FC2F421733FE300D6F9E4 /* TLDataStore.swift in Sources */,
 				587A1005219448B3000E8B35 /* OAuth2WebViewController.swift in Sources */,

@@ -38,7 +38,12 @@ class TLTimelineViewController: UIViewController, TLLoginRequired {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = TLUtils.viewTitle(by: viewTitle)
+        if viewTitle == .hashtag {
+            self.title = "#" + self.hashtag
+        } else {
+            self.title = TLUtils.viewTitle(by: viewTitle)
+        }
+        
         self.timelineWorker = TLTimeLine(with: self.tableView)
         commonSetup(worker: self.timelineWorker!)
     }

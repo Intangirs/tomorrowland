@@ -16,7 +16,12 @@ class TLTimeLine: NSObject {
     var listId: String = ""
     var tableView: UITableView
     var isLoadingMore: Bool = false
-    var shouldLoadMore: Bool = true
+    var shouldLoadMore: Bool
+    var initialLoad: Bool = true
+
+    var shouldLoad: Bool {
+        return (initialLoad || (shouldLoadMore && !self.maxId.isEmpty)) && !isLoadingMore
+    }
 
     var handleURLTap: ((URL) -> Void)?
     var didCellSelected: ((UITableView, IndexPath, Status) -> Void)?
@@ -25,12 +30,12 @@ class TLTimeLine: NSObject {
     private let refreshControl = UIRefreshControl()
 
     public init(with tableView: UITableView) {
-        self.statuses = []
-        self.maxId = ""
-
         self.tableView = tableView
+        self.maxId = ""
+        self.statuses = []
+        self.shouldLoadMore = true
         super.init()
-
+        
         refreshControl.addTarget(self, action: #selector(refreshTimeline), for: .valueChanged)
         self.tableView.refreshControl = refreshControl
         self.tableView.delegate = self
@@ -41,11 +46,12 @@ class TLTimeLine: NSObject {
     }
 
     public func start(type: MastodonAPI.TimelineType, hashtag: String, listId: String) {
-        self.timelineType = type
-        self.hashTag = hashtag
-        self.listId = listId
-        self.statuses = []
-        fetch()
+        if self.initialLoad {
+            self.timelineType = type
+            self.hashTag = hashtag
+            self.listId = listId
+            fetch()
+        }
     }
 
 }
@@ -86,23 +92,27 @@ extension TLTimeLine: UITableViewDelegate, UITableViewDataSource {
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         let difference = maximumOffset - currentOffset
 
-        shouldLoadMore = canLoadFromBottom && difference <= -60.0
+        shouldLoadMore = canLoadFromBottom && difference <= -120.0
     }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if (self.maxId == "" || shouldLoadMore), self.isLoadingMore == false {
-            self.fetch()
-            shouldLoadMore = false
-        }
+        self.fetch()
     }
 }
 
 extension TLTimeLine {
     private func fetch() {
+        guard shouldLoad else {
+            return
+        }
+        
         self.isLoadingMore = true
 
         Mastodon.fetchTimeline(type: self.timelineType, hashTag: self.hashTag, listId: self.listId, maxId: self.maxId) { (result, headers, error) in
             self.isLoadingMore = false
+            self.initialLoad = false
+            self.shouldLoadMore = false
+
             if let headers = headers {
                 self.maxId = headers.maxId
             }
@@ -119,20 +129,18 @@ extension TLTimeLine {
                     self.refreshControl.endRefreshing()
                 }
 
-                var startIndex = self.statuses.count - nonOptionalResult.count
-                var indexes = [IndexPath]()
-                nonOptionalResult.forEach({ (_) in
-                    indexes.append(IndexPath(row: startIndex, section: 0))
-                    startIndex += 1
-                })
-                
                 self.tableView.reloadData()
             }
         }
     }
 
-    @objc func refreshTimeline() {
+    fileprivate func resetTimeline() {
         self.maxId = ""
-        shouldLoadMore = true
+        self.statuses = []
+        self.initialLoad = true
+    }
+    
+    @objc func refreshTimeline() {
+        resetTimeline()
     }
 }

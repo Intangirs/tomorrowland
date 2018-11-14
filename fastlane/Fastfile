@@ -19,16 +19,16 @@ platform :ios do
   desc "Description of what the lane does"
   lane :build do
       xcversion(version: '~> 10.1')
-    cocoapods
-  	match(
-  		type: "appstore"
-  		)
-    gym
+      cocoapods
+      match(
+          type: "appstore"
+      )
+      gym
   end
 
   desc "Upload build to TestFlight"
   lane :beta do
-    build
-    pilot
+      build
+      pilot
   end
 end

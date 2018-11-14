@@ -25,7 +25,7 @@ Description of what the lane does
 ```
 fastlane ios beta
 ```
-
+Upload build to TestFlight
 
 ----
 

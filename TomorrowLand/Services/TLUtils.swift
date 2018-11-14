@@ -65,22 +65,22 @@ class TLUtils {
 
         let homeViewController = TLTimelineViewController()
         homeViewController.timelineType = .home
-        let localViewController = TLTimelineViewController()
-        localViewController.timelineType = .local
-        let federatedViewController = TLTimelineViewController()
-        federatedViewController.timelineType = .federation
+//        let localViewController = TLTimelineViewController()
+//        localViewController.timelineType = .local
+//        let federatedViewController = TLTimelineViewController()
+//        federatedViewController.timelineType = .federation
         let tootViewController = TLTootViewController()
 
         let homeNav = UINavigationController(rootViewController: homeViewController)
         homeNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .home), image: nil, tag: MastodonAPI.TimelineType.home.hashValue)
-        let localNav = UINavigationController(rootViewController: localViewController)
-        localNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .local), image: nil, tag: MastodonAPI.TimelineType.local.hashValue)
-        let federatedNav = UINavigationController(rootViewController: federatedViewController)
-        federatedNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .federation), image: nil, tag: MastodonAPI.TimelineType.federation.hashValue)
+//        let localNav = UINavigationController(rootViewController: localViewController)
+//        localNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .local), image: nil, tag: MastodonAPI.TimelineType.local.hashValue)
+//        let federatedNav = UINavigationController(rootViewController: federatedViewController)
+//        federatedNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .federation), image: nil, tag: MastodonAPI.TimelineType.federation.hashValue)
         let tootNav = UINavigationController(rootViewController: tootViewController)
         tootNav.tabBarItem = UITabBarItem(title: TLUtils.viewTitle(by: .toot), image: nil, tag: 599)
 
-        tabBarViewController.viewControllers = [homeNav, localNav, federatedNav, tootNav]
+        tabBarViewController.viewControllers = [homeNav, tootNav]
         return tabBarViewController
     }
 

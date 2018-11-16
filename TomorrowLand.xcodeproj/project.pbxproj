@@ -11,7 +11,6 @@
 		58187F86215A3B9300CA842A /* TLTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F84215A3B9300CA842A /* TLTimelineViewController.swift */; };
 		58187F89215A41D200CA842A /* Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F88215A41D200CA842A /* Mastodon.swift */; };
 		58187F8B215A42D900CA842A /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58187F8A215A42D900CA842A /* Token.swift */; };
-		5821ED74219449AE0024A616 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5821ED73219449AE0024A616 /* Constants.swift */; };
 		587990362170329E008BB880 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587990352170329E008BB880 /* Emoji.swift */; };
 		58799038217036EE008BB880 /* TLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58799037217036EE008BB880 /* TLUtils.swift */; };
 		587A0FF321944171000E8B35 /* MastodonAPI+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A0FF221944171000E8B35 /* MastodonAPI+Type.swift */; };
@@ -28,6 +27,9 @@
 		5880FD7C215C9AE500DE273C /* StatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD7A215C9AE500DE273C /* StatusTableViewCell.xib */; };
 		5880FD7E215CF4F300DE273C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD7D215CF4F300DE273C /* Document.swift */; };
 		5880FD80215CFF8500DE273C /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD7F215CFF8500DE273C /* Entity.swift */; };
+		58A462DB219EAFC7008DDC72 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A462DA219EAFC7008DDC72 /* ShareViewController.swift */; };
+		58A462DE219EAFC7008DDC72 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58A462DC219EAFC7008DDC72 /* MainInterface.storyboard */; };
+		58A462E2219EAFC7008DDC72 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 58A462D8219EAFC7008DDC72 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABFB292126BA8100137583 /* AppDelegate.swift */; };
 		58ABFB312126BA8200137583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB302126BA8200137583 /* Assets.xcassets */; };
 		58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58ABFB322126BA8200137583 /* LaunchScreen.storyboard */; };
@@ -53,6 +55,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		58A462E0219EAFC7008DDC72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58ABFB1E2126BA8100137583 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58A462D7219EAFC7008DDC72;
+			remoteInfo = ShareExtension;
+		};
 		58ABFB3B2126BA8200137583 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58ABFB1E2126BA8100137583 /* Project object */;
@@ -69,6 +78,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		58A462E6219EAFC7008DDC72 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				58A462E2219EAFC7008DDC72 /* ShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0595D90FC7109E29CD159D1A /* Pods-TomorrowLandUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowLandUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TomorrowLandUITests/Pods-TomorrowLandUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		09798DC5C21E352CCAF3F75A /* Pods_TomorrowLand.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TomorrowLand.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +102,6 @@
 		58187F85215A3B9300CA842A /* TLTimelineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLTimelineViewController.xib; sourceTree = "<group>"; };
 		58187F88215A41D200CA842A /* Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mastodon.swift; sourceTree = "<group>"; };
 		58187F8A215A42D900CA842A /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		5821ED73219449AE0024A616 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		587990352170329E008BB880 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		58799037217036EE008BB880 /* TLUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLUtils.swift; sourceTree = "<group>"; };
 		587A0FF221944171000E8B35 /* MastodonAPI+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonAPI+Type.swift"; sourceTree = "<group>"; };
@@ -97,6 +119,10 @@
 		5880FD7A215C9AE500DE273C /* StatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusTableViewCell.xib; sourceTree = "<group>"; };
 		5880FD7D215CF4F300DE273C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		5880FD7F215CFF8500DE273C /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		58A462D8219EAFC7008DDC72 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		58A462DA219EAFC7008DDC72 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		58A462DD219EAFC7008DDC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		58A462DF219EAFC7008DDC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58ABFB262126BA8100137583 /* TomorrowLand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomorrowLand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58ABFB292126BA8100137583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58ABFB302126BA8200137583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,6 +162,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		58A462D5219EAFC7008DDC72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58ABFB232126BA8100137583 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,12 +255,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		58A462D9219EAFC7008DDC72 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				58A462DA219EAFC7008DDC72 /* ShareViewController.swift */,
+				58A462DC219EAFC7008DDC72 /* MainInterface.storyboard */,
+				58A462DF219EAFC7008DDC72 /* Info.plist */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
 		58ABFB1D2126BA8100137583 = {
 			isa = PBXGroup;
 			children = (
+				58187F82215A396100CA842A /* Mastodon */,
 				58ABFB282126BA8100137583 /* TomorrowLand */,
 				58ABFB3D2126BA8200137583 /* TomorrowLandTests */,
 				58ABFB482126BA8300137583 /* TomorrowLandUITests */,
+				58A462D9219EAFC7008DDC72 /* ShareExtension */,
 				58ABFB272126BA8100137583 /* Products */,
 				58ABFB572126C07800137583 /* Frameworks */,
 				70EA6992217320400073016F /* Recovered References */,
@@ -241,6 +286,7 @@
 				58ABFB262126BA8100137583 /* TomorrowLand.app */,
 				58ABFB3A2126BA8200137583 /* TomorrowLandTests.xctest */,
 				58ABFB452126BA8300137583 /* TomorrowLandUITests.xctest */,
+				58A462D8219EAFC7008DDC72 /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,7 +296,6 @@
 			children = (
 				70EA6993217321750073016F /* ViewControllers */,
 				709228C62161108F004912CB /* Services */,
-				58187F82215A396100CA842A /* Mastodon */,
 				5880FD78215C9ABB00DE273C /* Views */,
 				58ABFB292126BA8100137583 /* AppDelegate.swift */,
 				58ABFB302126BA8200137583 /* Assets.xcassets */,
@@ -303,7 +348,6 @@
 				58799037217036EE008BB880 /* TLUtils.swift */,
 				70EA69802172FBFB0073016F /* String+TL.swift */,
 				704FC2F321733FE300D6F9E4 /* TLDataStore.swift */,
-				5821ED73219449AE0024A616 /* Constants.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -347,6 +391,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		58A462D7219EAFC7008DDC72 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58A462E5219EAFC7008DDC72 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				58A462D4219EAFC7008DDC72 /* Sources */,
+				58A462D5219EAFC7008DDC72 /* Frameworks */,
+				58A462D6219EAFC7008DDC72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 58A462D8219EAFC7008DDC72 /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		58ABFB252126BA8100137583 /* TomorrowLand */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58ABFB4E2126BA8300137583 /* Build configuration list for PBXNativeTarget "TomorrowLand" */;
@@ -356,10 +417,12 @@
 				58ABFB232126BA8100137583 /* Frameworks */,
 				58ABFB242126BA8100137583 /* Resources */,
 				D6900E4BDD02BD3425659655 /* [CP] Embed Pods Frameworks */,
+				58A462E6219EAFC7008DDC72 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				58A462E1219EAFC7008DDC72 /* PBXTargetDependency */,
 			);
 			name = TomorrowLand;
 			productName = TomorrowLand;
@@ -410,10 +473,13 @@
 		58ABFB1E2126BA8100137583 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Yusuke Ohashi";
 				TargetAttributes = {
+					58A462D7219EAFC7008DDC72 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					58ABFB252126BA8100137583 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -444,11 +510,20 @@
 				58ABFB252126BA8100137583 /* TomorrowLand */,
 				58ABFB392126BA8200137583 /* TomorrowLandTests */,
 				58ABFB442126BA8300137583 /* TomorrowLandUITests */,
+				58A462D7219EAFC7008DDC72 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		58A462D6219EAFC7008DDC72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58A462DE219EAFC7008DDC72 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58ABFB242126BA8100137583 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +658,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		58A462D4219EAFC7008DDC72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58A462DB219EAFC7008DDC72 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		58ABFB222126BA8100137583 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -592,7 +675,6 @@
 				7037797621577F6A00064392 /* MastodonAPI+Path.swift in Sources */,
 				58ABFB2A2126BA8100137583 /* AppDelegate.swift in Sources */,
 				5880FD73215C74DF00DE273C /* Account.swift in Sources */,
-				5821ED74219449AE0024A616 /* Constants.swift in Sources */,
 				709228C5216101CA004912CB /* TLTimeline.swift in Sources */,
 				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
 				70EA6997217321920073016F /* TLProfileViewController.swift in Sources */,
@@ -637,6 +719,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		58A462E1219EAFC7008DDC72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58A462D7219EAFC7008DDC72 /* ShareExtension */;
+			targetProxy = 58A462E0219EAFC7008DDC72 /* PBXContainerItemProxy */;
+		};
 		58ABFB3C2126BA8200137583 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 58ABFB252126BA8100137583 /* TomorrowLand */;
@@ -659,6 +746,14 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		58A462DC219EAFC7008DDC72 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58A462DD219EAFC7008DDC72 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		58ABFB322126BA8200137583 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -670,6 +765,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		58A462E3219EAFC7008DDC72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KHFXF6N2QE;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLand.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development me.junkpiano.ios.TomorrowLand.ShareExtension";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58A462E4219EAFC7008DDC72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = KHFXF6N2QE;
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLand.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.junkpiano.ios.TomorrowLand.ShareExtension";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		58ABFB4C2126BA8300137583 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -722,7 +863,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -777,7 +918,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -790,11 +931,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 77F2D8CBF8F22FA13F98A866 /* Pods-TomorrowLand.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KHFXF6N2QE;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TomorrowLand/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -811,12 +954,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17C4A3B7B370E37796F6C20C /* Pods-TomorrowLand.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KHFXF6N2QE;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TomorrowLand/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -918,6 +1063,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		58A462E5219EAFC7008DDC72 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58A462E3219EAFC7008DDC72 /* Debug */,
+				58A462E4219EAFC7008DDC72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		58ABFB212126BA8100137583 /* Build configuration list for PBXProject "TomorrowLand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

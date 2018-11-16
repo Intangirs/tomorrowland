@@ -23,6 +23,10 @@ platform :ios do
       match(
           type: "appstore"
       )
+      match(
+        type: "appstore",
+        app_identifier: "me.junkpiano.ios.TomorrowLand.ShareExtension"
+      )
       gym
   end
 

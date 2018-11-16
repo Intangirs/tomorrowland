@@ -9,11 +9,15 @@
 import KeychainSwift
 
 protocol TLLoginRequired {
+    
+    /**
+     * Sign in your instance
+     */
     func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void)
 }
 
 extension TLLoginRequired where Self: UIViewController {
-
+    
     func signIntoFederation(shouldAuthenticate: Bool, done: @escaping (Bool) -> Void) {
         guard shouldAuthenticate else {
             done(true)
@@ -23,7 +27,7 @@ extension TLLoginRequired where Self: UIViewController {
         if Mastodon.shared.token.count > 0 {
             done(true)
         } else {
-            Mastodon.addAccount(on: self) { success, hostname, newToken in
+            addAccount(on: self) { success, hostname, newToken in
                 guard success, let host = hostname, let token = newToken else {
                     done(false)
                     return
@@ -33,5 +37,14 @@ extension TLLoginRequired where Self: UIViewController {
                 done(true)
             }
         }
+    }
+    
+    /**
+     * Authentication through WebView
+     */
+    func addAccount(on viewController: UIViewController, completion: @escaping (Bool, String?, String?) -> Void) {
+        let auth = AuthenticationViewController()
+        auth.completeBlock = completion
+        viewController.present(auth, animated: true, completion: nil)
     }
 }

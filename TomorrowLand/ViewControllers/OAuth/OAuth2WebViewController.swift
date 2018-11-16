@@ -22,7 +22,7 @@ class OAuth2WebViewController: UIViewController {
         webView.navigationDelegate = self
 
         var urlstring: String = "https://\(hostName)"
-        urlstring += kOauthAuthorizePath
+        urlstring += MastodonAPI.oauthAuthorizePath
         urlstring += "?scope=" + Mastodon.shared.scope.urlEncoded()
         urlstring += "&client_id=" + Mastodon.shared.clientId
         urlstring += "&response_type=code"
@@ -39,7 +39,7 @@ class OAuth2WebViewController: UIViewController {
 
 extension OAuth2WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let url = navigationAction.request.url, url.path.contains(kOauthRedirectPath) {
+        if let url = navigationAction.request.url, url.path.contains(MastodonAPI.oauthRedirectPath) {
             if let query = url.query {
                 let codequery = query.split(separator: "&").map { (pair) -> [String: String] in
                     let values = pair.split(separator: "=")

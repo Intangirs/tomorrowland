@@ -6,6 +6,7 @@ PODS:
   - Kingfisher (4.10.1)
   - Kiri (1.0.0):
     - Alamofire (~> 4.7)
+  - MMKV (1.0.12)
 
 DEPENDENCIES:
   - ActiveLabel
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher (~> 4.0)
   - Kiri (from `https://github.com/junkpiano/Kiri.git`, branch `master`)
+  - MMKV
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -21,6 +23,7 @@ SPEC REPOS:
     - Alamofire
     - KeychainSwift
     - Kingfisher
+    - MMKV
 
 EXTERNAL SOURCES:
   Keys:
@@ -41,7 +44,8 @@ SPEC CHECKSUMS:
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Kiri: c4d97c60a144d648abc2b2dd19116bfb01b13595
+  MMKV: 0a96d8a53c1e508e7061c5067ed214b2e5d8d4a7
 
-PODFILE CHECKSUM: 8bc54bc3477873d1bb5b4e7223c526f5a235cbf8
+PODFILE CHECKSUM: e1e0d3dd5efa166ce4f4d64e5b67a4291c8c3fa3
 
 COCOAPODS: 1.5.3

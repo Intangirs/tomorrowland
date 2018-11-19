@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AuthenticationViewController: UIViewController {
+class TLAuthenticationViewController: UIViewController {
 
     @IBOutlet weak var instanceHostLabel: UITextField!
     @IBOutlet weak var authorizeButton: UIButton!
@@ -36,5 +36,14 @@ class AuthenticationViewController: UIViewController {
         if web.hostName.count > 0 {
             present(web, animated: false, completion: nil)
         }
+    }
+    
+    /**
+     * Authentication through WebView
+     */
+    static func addAccount(on viewController: UIViewController, completion: @escaping (Bool, String?, String?) -> Void) {
+        let auth = TLAuthenticationViewController()
+        auth.completeBlock = completion
+        viewController.present(auth, animated: true, completion: nil)
     }
 }

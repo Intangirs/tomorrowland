@@ -17,8 +17,8 @@
 		587A0FF321944171000E8B35 /* MastodonAPI+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A0FF221944171000E8B35 /* MastodonAPI+Type.swift */; };
 		587A0FF521944240000E8B35 /* MastodonAPI+RequestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A0FF421944240000E8B35 /* MastodonAPI+RequestContainer.swift */; };
 		587A1005219448B3000E8B35 /* OAuth2WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A1001219448B2000E8B35 /* OAuth2WebViewController.swift */; };
-		587A1006219448B3000E8B35 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587A1002219448B2000E8B35 /* AuthenticationViewController.xib */; };
-		587A1007219448B3000E8B35 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A1003219448B2000E8B35 /* AuthenticationViewController.swift */; };
+		587A1006219448B3000E8B35 /* TLAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587A1002219448B2000E8B35 /* TLAuthenticationViewController.xib */; };
+		587A1007219448B3000E8B35 /* TLAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587A1003219448B2000E8B35 /* TLAuthenticationViewController.swift */; };
 		587A1008219448B3000E8B35 /* OAuth2WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587A1004219448B2000E8B35 /* OAuth2WebViewController.xib */; };
 		5880FD62215B886300DE273C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5880FD64215B886300DE273C /* Localizable.strings */; };
 		5880FD67215B8B3400DE273C /* TLLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880FD66215B8B3400DE273C /* TLLogin.swift */; };
@@ -40,7 +40,6 @@
 		700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AB5EA21578918005C5150 /* String+Mastodon.swift */; };
 		7037797621577F6A00064392 /* MastodonAPI+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7037797521577F6A00064392 /* MastodonAPI+Path.swift */; };
 		704FC2EE2173281900D6F9E4 /* TLTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58187F85215A3B9300CA842A /* TLTimelineViewController.xib */; };
-		704FC2F421733FE300D6F9E4 /* TLDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FC2F321733FE300D6F9E4 /* TLDataStore.swift */; };
 		708D7116216FAE0E001C463F /* Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D7115216FAE0E001C463F /* Headers.swift */; };
 		709228C5216101CA004912CB /* TLTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709228C4216101CA004912CB /* TLTimeline.swift */; };
 		70A2FCB2216119E3004BF824 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A2FCB1216119E3004BF824 /* Media.swift */; };
@@ -85,8 +84,8 @@
 		587A0FF221944171000E8B35 /* MastodonAPI+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonAPI+Type.swift"; sourceTree = "<group>"; };
 		587A0FF421944240000E8B35 /* MastodonAPI+RequestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonAPI+RequestContainer.swift"; sourceTree = "<group>"; };
 		587A1001219448B2000E8B35 /* OAuth2WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2WebViewController.swift; sourceTree = "<group>"; };
-		587A1002219448B2000E8B35 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
-		587A1003219448B2000E8B35 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		587A1002219448B2000E8B35 /* TLAuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLAuthenticationViewController.xib; sourceTree = "<group>"; };
+		587A1003219448B2000E8B35 /* TLAuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLAuthenticationViewController.swift; sourceTree = "<group>"; };
 		587A1004219448B2000E8B35 /* OAuth2WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OAuth2WebViewController.xib; sourceTree = "<group>"; };
 		5880FD63215B886300DE273C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5880FD65215B887600DE273C /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -120,7 +119,6 @@
 		700AB5EA21578918005C5150 /* String+Mastodon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Mastodon.swift"; sourceTree = "<group>"; };
 		7037797521577F6A00064392 /* MastodonAPI+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MastodonAPI+Path.swift"; sourceTree = "<group>"; };
 		704F54242160E8D10068BA88 /* ActiveLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ActiveLabel.framework; path = Carthage/Build/iOS/ActiveLabel.framework; sourceTree = "<group>"; };
-		704FC2F321733FE300D6F9E4 /* TLDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLDataStore.swift; sourceTree = "<group>"; };
 		708D7115216FAE0E001C463F /* Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headers.swift; sourceTree = "<group>"; };
 		709228C4216101CA004912CB /* TLTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLTimeline.swift; sourceTree = "<group>"; };
 		70A2FCB1216119E3004BF824 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -169,6 +167,7 @@
 			children = (
 				700AB5EA21578918005C5150 /* String+Mastodon.swift */,
 				58187F88215A41D200CA842A /* Mastodon.swift */,
+				581928A021A25B49003244D6 /* OAuth */,
 				587A0FEF21943DD8000E8B35 /* API */,
 				58187F8C215A472500CA842A /* Models */,
 			);
@@ -191,6 +190,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		581928A021A25B49003244D6 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				587A1001219448B2000E8B35 /* OAuth2WebViewController.swift */,
+				587A1004219448B2000E8B35 /* OAuth2WebViewController.xib */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		587A0FEF21943DD8000E8B35 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,17 +208,6 @@
 				587A0FF421944240000E8B35 /* MastodonAPI+RequestContainer.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		587A1000219448B2000E8B35 /* OAuth */ = {
-			isa = PBXGroup;
-			children = (
-				587A1001219448B2000E8B35 /* OAuth2WebViewController.swift */,
-				587A1004219448B2000E8B35 /* OAuth2WebViewController.xib */,
-				587A1003219448B2000E8B35 /* AuthenticationViewController.swift */,
-				587A1002219448B2000E8B35 /* AuthenticationViewController.xib */,
-			);
-			path = OAuth;
 			sourceTree = "<group>";
 		};
 		5880FD78215C9ABB00DE273C /* Views */ = {
@@ -302,7 +299,6 @@
 				709228C4216101CA004912CB /* TLTimeline.swift */,
 				58799037217036EE008BB880 /* TLUtils.swift */,
 				70EA69802172FBFB0073016F /* String+TL.swift */,
-				704FC2F321733FE300D6F9E4 /* TLDataStore.swift */,
 				5821ED73219449AE0024A616 /* Constants.swift */,
 			);
 			path = Services;
@@ -326,7 +322,8 @@
 				70EA6994217321920073016F /* TLProfileViewController.xib */,
 				58C710E921757611006E7E75 /* TLTootViewController.swift */,
 				58C710EA21757611006E7E75 /* TLTootViewController.xib */,
-				587A1000219448B2000E8B35 /* OAuth */,
+				587A1003219448B2000E8B35 /* TLAuthenticationViewController.swift */,
+				587A1002219448B2000E8B35 /* TLAuthenticationViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -416,13 +413,16 @@
 				TargetAttributes = {
 					58ABFB252126BA8100137583 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					58ABFB392126BA8200137583 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 58ABFB252126BA8100137583;
 					};
 					58ABFB442126BA8300137583 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = 58ABFB252126BA8100137583;
 					};
 				};
@@ -453,7 +453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				587A1006219448B3000E8B35 /* AuthenticationViewController.xib in Resources */,
+				587A1006219448B3000E8B35 /* TLAuthenticationViewController.xib in Resources */,
 				5880FD62215B886300DE273C /* Localizable.strings in Resources */,
 				58ABFB342126BA8200137583 /* LaunchScreen.storyboard in Resources */,
 				704FC2EE2173281900D6F9E4 /* TLTimelineViewController.xib in Resources */,
@@ -563,6 +563,7 @@
 				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Kiri/Kiri.framework",
+				"${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -574,6 +575,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kiri.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMKV.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -597,7 +599,6 @@
 				700AB5EB21578918005C5150 /* String+Mastodon.swift in Sources */,
 				70EA6997217321920073016F /* TLProfileViewController.swift in Sources */,
 				58C710EB21757611006E7E75 /* TLTootViewController.swift in Sources */,
-				704FC2F421733FE300D6F9E4 /* TLDataStore.swift in Sources */,
 				587A1005219448B3000E8B35 /* OAuth2WebViewController.swift in Sources */,
 				70EA698A217304C30073016F /* Mention.swift in Sources */,
 				58187F86215A3B9300CA842A /* TLTimelineViewController.swift in Sources */,
@@ -611,7 +612,7 @@
 				5880FD7E215CF4F300DE273C /* Document.swift in Sources */,
 				5880FD80215CFF8500DE273C /* Entity.swift in Sources */,
 				58799038217036EE008BB880 /* TLUtils.swift in Sources */,
-				587A1007219448B3000E8B35 /* AuthenticationViewController.swift in Sources */,
+				587A1007219448B3000E8B35 /* TLAuthenticationViewController.swift in Sources */,
 				5880FD67215B8B3400DE273C /* TLLogin.swift in Sources */,
 				587A0FF521944240000E8B35 /* MastodonAPI+RequestContainer.swift in Sources */,
 				708D7116216FAE0E001C463F /* Headers.swift in Sources */,
@@ -802,7 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development me.junkpiano.ios.TomorrowLand";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -824,7 +825,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLand;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore me.junkpiano.ios.TomorrowLand";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -845,7 +846,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TomorrowLand.app/TomorrowLand";
 			};
@@ -867,7 +868,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TomorrowLand.app/TomorrowLand";
 			};
@@ -888,7 +889,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLandUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TomorrowLand;
 			};
@@ -909,7 +910,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.junkpiano.ios.TomorrowLandUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = TomorrowLand;
 			};

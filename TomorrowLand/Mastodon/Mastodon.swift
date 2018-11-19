@@ -36,24 +36,13 @@ class Mastodon {
         }
     }
 
-    /**
-     * Authentication through WebView
-     */
-    static func addAccount(on viewController: UIViewController, completion: @escaping (Bool, String?, String?) -> Void) {
-        let auth = AuthenticationViewController()
-        auth.completeBlock = completion
-        viewController.present(auth, animated: true, completion: nil)
-    }
-
     static func fetchTimeline(type: MastodonAPI.TimelineType, hashTag: String, listId: String, maxId: String, completion: @escaping ([Status]?, Headers?, Error?) -> Void) {
         Kiri<API>(request: .timeline(type, hashTag, listId, maxId)).send { (response, error) in
             
-            var maxId: String?
             var headers: Headers?
             
             if let response = response?.response {
                 headers = Headers(with: response.allHeaderFields)
-                maxId = headers?.maxId
             }
             
             do {

@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 import Kiri
+import Mastodon
 
 class TLTimelineViewController: UIViewController, TLLoginRequired {
 

@@ -11,7 +11,8 @@ target 'TomorrowLand' do
   pod "ActiveLabel"
   pod "Kingfisher", "~> 4.0"
   pod "Kiri", :git => "https://github.com/junkpiano/Kiri.git", :branch => 'master'
-  
+  pod "Mastodon.swift", :git => "https://github.com/junkpiano/Mastodon.swift.git", :branch => "master"
+
   target 'TomorrowLandTests' do
     inherit! :search_paths
     # Pods for testing

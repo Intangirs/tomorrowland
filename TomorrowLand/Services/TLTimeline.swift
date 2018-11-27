@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mastodon
 
 class TLTimeLine: NSObject {
     var statuses: [Status]
@@ -110,7 +111,10 @@ extension TLTimeLine {
 
         Mastodon.fetchTimeline(type: self.timelineType, hashTag: self.hashTag, listId: self.listId, maxId: self.maxId) { (result, headers, error) in
             self.isLoadingMore = false
-            self.initialLoad = false
+            if self.initialLoad {
+                self.initialLoad = false
+                self.statuses = []
+            }
             self.shouldLoadMore = false
 
             if let headers = headers {
@@ -136,7 +140,6 @@ extension TLTimeLine {
 
     fileprivate func resetTimeline() {
         self.maxId = ""
-        self.statuses = []
         self.initialLoad = true
     }
     

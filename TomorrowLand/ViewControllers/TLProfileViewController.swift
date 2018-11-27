@@ -8,6 +8,7 @@
 
 import UIKit
 import Kiri
+import Mastodon
 
 class TLProfileViewController: UIViewController {
 

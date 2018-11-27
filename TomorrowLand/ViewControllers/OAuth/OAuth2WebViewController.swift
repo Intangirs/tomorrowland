@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 import Kiri
-import Alamofire
+import Mastodon
 
 class OAuth2WebViewController: UIViewController {
 
@@ -23,7 +23,7 @@ class OAuth2WebViewController: UIViewController {
 
         var urlstring: String = "https://\(hostName)"
         urlstring += MastodonAPI.oauthAuthorizePath
-        urlstring += "?scope=" + Mastodon.shared.scope.urlEncoded()
+        urlstring += "?scope=" + (Mastodon.shared.scope.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")
         urlstring += "&client_id=" + Mastodon.shared.clientId
         urlstring += "&response_type=code"
         urlstring += "&redirect_uri=" + Mastodon.shared.redirectUri

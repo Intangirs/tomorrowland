@@ -7,6 +7,7 @@
 //
 
 import KeychainSwift
+import Mastodon
 
 protocol TLLoginRequired {
     

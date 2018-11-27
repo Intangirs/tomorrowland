@@ -10,6 +10,7 @@ import UIKit
 import ActiveLabel
 import Alamofire
 import Kingfisher
+import Mastodon
 
 class StatusTableViewCell: UITableViewCell {
 

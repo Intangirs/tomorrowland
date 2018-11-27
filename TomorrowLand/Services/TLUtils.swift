@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainSwift
+import Mastodon
 
 class TLUtils {
     enum ViewType {

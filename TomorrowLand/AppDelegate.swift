@@ -9,6 +9,7 @@
 import UIKit
 import KeychainSwift
 import Keys
+import Mastodon
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

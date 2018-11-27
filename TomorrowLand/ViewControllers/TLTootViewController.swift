@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mastodon
 import Kiri
 
 class TLTootViewController: UIViewController {

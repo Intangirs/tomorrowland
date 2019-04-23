@@ -1,13 +1,13 @@
 PODS:
   - ActiveLabel (1.0.1)
-  - Alamofire (4.8.0)
+  - Alamofire (4.8.2)
   - KeychainSwift (12.0.0)
   - Keys (1.0.1)
   - Kingfisher (4.10.1)
-  - Kiri (1.0.0):
-    - Alamofire (~> 4.7)
-  - Mastodon.swift (1.0.0):
-    - Kiri
+  - Kiri (1.1.0):
+    - Alamofire (~> 4.8.0)
+  - Mastodon.swift (1.1.0):
+    - Kiri (~> 1.1.0)
 
 DEPENDENCIES:
   - ActiveLabel
@@ -15,8 +15,8 @@ DEPENDENCIES:
   - KeychainSwift (~> 12.0.0)
   - Keys (from `Pods/CocoaPodsKeys`)
   - Kingfisher (~> 4.0)
-  - Kiri (from `https://github.com/junkpiano/Kiri.git`, branch `master`)
-  - Mastodon.swift (from `https://github.com/junkpiano/Mastodon.swift.git`, branch `master`)
+  - Kiri (from `https://github.com/junkpiano/Kiri.git`)
+  - Mastodon.swift (from `https://github.com/junkpiano/Mastodon.swift.git`, branch `1.1.0`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -29,29 +29,28 @@ EXTERNAL SOURCES:
   Keys:
     :path: Pods/CocoaPodsKeys
   Kiri:
-    :branch: master
     :git: https://github.com/junkpiano/Kiri.git
   Mastodon.swift:
-    :branch: master
+    :branch: 1.1.0
     :git: https://github.com/junkpiano/Mastodon.swift.git
 
 CHECKOUT OPTIONS:
   Kiri:
-    :commit: a83dda33a3b2f6d193dbe24b91a93b5cb65bb64f
+    :commit: a1b2c6e646f55a3335807ff9ccc5a4fa018f1feb
     :git: https://github.com/junkpiano/Kiri.git
   Mastodon.swift:
-    :commit: 611d33fd9c740fdfd9816409dd2ff3583c454f2b
+    :commit: 3a43468af82a935539e91071e4bbc37ee5f53b51
     :git: https://github.com/junkpiano/Mastodon.swift.git
 
 SPEC CHECKSUMS:
   ActiveLabel: b8b2396fe25308d563601437d6605bf691c3b5db
-  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   KeychainSwift: d5e776578587ee5958ce36601df22f168f65138a
   Keys: a576f4c9c1c641ca913a959a9c62ed3f215a8de9
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
-  Kiri: c22304b2c1b69a2e8527bcd38512e22fa47b1732
-  Mastodon.swift: a722b318df20df08fb5e7b07ad2869e15e24f41a
+  Kiri: 5faefcf9b16bad3c7af59a5c063471a1ac286627
+  Mastodon.swift: 1423782061679afa517ae35fe25d7ccaf6ae9101
 
-PODFILE CHECKSUM: 790101917f6c3d84166b9bd3ee0144c264d5ee8c
+PODFILE CHECKSUM: 8274ef691800f57ee1e06ecf6668ce74efdfd131
 
 COCOAPODS: 1.5.3

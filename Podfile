@@ -10,8 +10,8 @@ target 'TomorrowLand' do
   pod "KeychainSwift", "~> 12.0.0"
   pod "ActiveLabel"
   pod "Kingfisher", "~> 4.0"
-  pod "Kiri", :git => "https://github.com/junkpiano/Kiri.git", :branch => 'master'
-  pod "Mastodon.swift", :git => "https://github.com/junkpiano/Mastodon.swift.git", :branch => "master"
+  pod "Kiri", :git => "https://github.com/junkpiano/Kiri.git"
+  pod "Mastodon.swift", :git => "https://github.com/junkpiano/Mastodon.swift.git", :branch => "1.1.0"
 
   target 'TomorrowLandTests' do
     inherit! :search_paths
